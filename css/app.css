@@ -1,0 +1,313 @@
+:root {
+  /*------------------------------
+Colors Variables
+------------------------------*/
+  --primaryColor: #fbd103;
+  --secondaryColor: #004743;
+  --lightGrey: #f7f7f7;
+  --darkGrey: #323232;
+  /*------------------------------
+Fonts Variables
+------------------------------*/
+  /* --font-reg: "Poppins Regular", Arial, Helvetica, sans-serif;
+  --font-med: "Poppins Medium", Arial, Helvetica, sans-serif;
+  --font-sb: "Poppins SemiBold", Arial, Helvetica, sans-serif;
+  --font-bold: "Poppins Bold", Arial, Helvetica, sans-serif;
+  --font-black: "Poppins Black", Arial, Helvetica, sans-serif; */
+  /*------------------------------
+Other Variables
+------------------------------*/
+  --transitionAll: all 0.5s ease-in;
+}
+
+/* :root.dark-theme {
+} */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* font-size: 10px; */
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+	font-family: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*------------------------------
+Reset - Start
+------------------------------*/
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+/*------------------------------
+Reset - End
+------------------------------*/
+
+/*------------------------------
+Helper Classes - Start
+------------------------------*/
+.h-full {
+  height: 100%;
+}
+/*------------------------------
+Helper Classes - End
+------------------------------*/
+
+/*------------------------------
+Components - Start
+------------------------------*/
+.btn {
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;
+  color: #ffffff;
+  background-color: var(--secondaryColor);
+}
+/*------------------------------
+Components - End
+------------------------------*/
+
+/*------------------------------
+					App - Start
+------------------------------*/
+/*------------------------------
+Header - Start
+------------------------------*/
+header {
+  background-color: var(--lightGrey);
+}
+
+.menu {
+  height: 5rem;
+  padding: 1rem 2rem;
+  box-shadow: 0px 1px 2px #d4d2d2;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 2.5rem;
+  font-weight: bold;
+  color: var(--secondaryColor);
+}
+
+.logo span:last-child {
+  color: var(--primaryColor);
+}
+
+.menuIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuIconImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuIconImage img {
+  width: 60%;
+}
+
+.hamburgerMenu {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburgerMenuLine {
+  position: relative;
+  width: 2.5rem;
+  height: 0.4rem;
+  border-radius: 1rem;
+  background-color: var(--secondaryColor);
+  transition: var(--transitionAll);
+}
+
+.hamburgerMenuLine::before,
+.hamburgerMenuLine::after {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  width: 2.5rem;
+  height: 0.4rem;
+  border-radius: 1rem;
+  background-color: var(--secondaryColor);
+  transition: var(--transitionAll);
+}
+
+.hamburgerMenuLine::after {
+  top: auto;
+  bottom: 0.8rem;
+}
+
+.hamburgerMenuOpen .hamburgerMenuLine {
+  background-color: transparent;
+}
+
+.hamburgerMenuOpen .hamburgerMenuLine::before {
+  transform: translateY(-0.8rem) rotate(-45deg);
+}
+
+.hamburgerMenuOpen .hamburgerMenuLine::after {
+  transform: translateY(0.8rem) rotate(45deg);
+}
+
+nav {
+  position: absolute;
+  top: -100rem;
+  left: 0;
+  right: 0;
+  background-color: var(--lightGrey);
+  width: 100%;
+  height: 100vh;
+  transition: var(--transitionAll);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	z-index: 1;
+}
+
+.navInMobile {
+  top: 5.1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--darkGrey);
+}
+
+nav ul a {
+  width: 100%;
+  padding: 0.5rem;
+  color: var(--darkGrey);
+  text-align: center;
+}
+
+nav ul a:hover {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+}
+
+.search {
+  width: 22rem;
+  position: relative;
+  text-align: center;
+}
+
+#searchInput {
+  width: 100%;
+  background-color: #e5e5e5;
+  border-radius: 10rem;
+  height: 3rem;
+  padding: 1rem 2.5rem 1rem 1.5rem;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+}
+
+.search img {
+  width: 2rem;
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  transform: translateY(-50%);
+}
+
+#search::placeholder {
+  color: #0000003f;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.headerContentLeft {
+  position: relative;
+	margin-bottom: 2rem;
+}
+
+.headerContentLeft img:first-child {
+  width: 100%;
+  filter: grayscale(1);
+}
+
+.headerContentLeft img:last-child {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.headerContentRight {
+  display: flex;
+  flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--darkGrey);
+	text-align: center;
+}
+
+.headerContentRight span {
+}
+
+.headerContentRight h1 {
+font-size: 3rem;
+font-weight: bold;
+margin: 2rem 0;
+line-height: 1.2;
+}
+
+.headerContentRight div {
+}
+/*------------------------------
+Header - End
+------------------------------*/
+/*------------------------------
+					App - End
+------------------------------*/
