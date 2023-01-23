@@ -17,14 +17,32 @@
   }
 
   .collectionWomen,
-  .collectionMen,.collectionBaby {
+  .collectionMen,
+  .collectionBaby {
     border-radius: 2rem;
     margin-bottom: 1rem;
   }
 
-	.collectionBabyContent h2 {
-		font-size: 3rem;
-	}
+  .collectionBabyContent h2 {
+    font-size: 3rem;
+  }
+
+  .topBrands {
+    border-radius: 2rem;
+  }
+
+  .brands {
+    flex-direction: row;
+  }
+
+  .brands div {
+    margin-bottom: 0;
+    margin-right: 0.7rem;
+  }
+
+  .brands div:last-child {
+    margin-right: 0;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -108,6 +126,34 @@
   .attributes {
     margin: 8rem -1rem 8rem;
   }
+
+  .newArrivalsTitle {
+    font-size: 4rem;
+  }
+
+  .newArrivalsSubTitle {
+    font-size: 1.5rem;
+  }
+
+  .category {
+    padding: 2rem;
+  }
+
+  .category div {
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.8rem;
+  }
+
+	.swiper-button-prev:after {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .swiper-button-next:after {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -159,17 +205,24 @@
   .collectionBaby {
     flex-grow: 1;
   }
-  /* .collectionBabyImage img {
-		width: 100%;
-	}
-	
-	.collectionBabyImage img:first-child {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) scale(1.3);
-		z-index: -1;
-	} */
+
+  .topBrands h2 {
+    font-size: 4rem;
+  }
+
+  .topBrands p {
+    font-size: 2rem;
+  }
+
+	.swiper-button-prev:after {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .swiper-button-next:after {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
@@ -185,11 +238,57 @@
   .attribute:nth-child(4) {
     grid-column: 4/5;
   }
+
+  .brands div {
+    width: 12rem;
+    height: 6rem;
+    margin-right: 1rem;
+  }
+
+  .brands div:last-child {
+    margin-right: 0;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
   .container {
     width: 125rem;
+  }
+
+  .newArrivalsTitle {
+    font-size: 6rem;
+  }
+
+  .newArrivalsSubTitle {
+    font-size: 2.5rem;
+  }
+
+  .category {
+    padding: 4rem;
+  }
+
+  .category div {
+    width: 12rem;
+    height: 6rem;
+    font-size: 2.5rem;
+  }
+
+  .topBrands h2 {
+    font-size: 5rem;
+  }
+
+  .topBrands p {
+    font-size: 3rem;
+  }
+
+  .brands div {
+    width: 14rem;
+    height: 7rem;
+    margin-right: 1.5rem;
+  }
+
+  .brands div:last-child {
+    margin-right: 0;
   }
 }
