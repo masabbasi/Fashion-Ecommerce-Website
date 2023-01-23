@@ -1,6 +1,9 @@
 const $ = document;
 const hamburgerMenu = $.querySelector(".hamburgerMenu");
 const menuNav = $.querySelector(".menu nav");
+const categories = $.querySelectorAll(".categories div");
+const products = $.querySelectorAll(".product");
+const rateStars = $.querySelectorAll(".rate img");
 
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuOpen");
@@ -15,7 +18,7 @@ const swiper = new Swiper(".swiper", {
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
 
   // Navigation arrows
@@ -33,7 +36,7 @@ const swiper = new Swiper(".swiper", {
     1200: {
       slidesPerView: 3,
     },
-		1400: {
+    1400: {
       slidesPerView: 4,
     },
   },

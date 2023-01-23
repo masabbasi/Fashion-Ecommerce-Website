@@ -127,25 +127,27 @@
     margin: 8rem -1rem 8rem;
   }
 
-  .newArrivalsTitle {
+  .newArrivalsTitle,
+  .trendingTitle {
     font-size: 4rem;
   }
 
-  .newArrivalsSubTitle {
+  .newArrivalsSubTitle,
+  .trendingSubTitle {
     font-size: 1.5rem;
   }
 
-  .category {
+  .categories {
     padding: 2rem;
   }
 
-  .category div {
+  .categories div {
     width: 8rem;
     height: 4rem;
     font-size: 1.8rem;
   }
 
-	.swiper-button-prev:after {
+  .swiper-button-prev:after {
     width: 4rem;
     height: 4rem;
   }
@@ -153,6 +155,10 @@
   .swiper-button-next:after {
     width: 4rem;
     height: 4rem;
+  }
+
+  .rate img {
+    cursor: pointer;
   }
 }
 
@@ -214,7 +220,7 @@
     font-size: 2rem;
   }
 
-	.swiper-button-prev:after {
+  .swiper-button-prev:after {
     width: 5rem;
     height: 5rem;
   }
@@ -256,19 +262,21 @@
     width: 125rem;
   }
 
-  .newArrivalsTitle {
+  .newArrivalsTitle,
+  .trendingTitle {
     font-size: 6rem;
   }
 
-  .newArrivalsSubTitle {
+  .newArrivalsSubTitle,
+  .trendingSubTitle {
     font-size: 2.5rem;
   }
 
-  .category {
+  .categories {
     padding: 4rem;
   }
 
-  .category div {
+  .categories div {
     width: 12rem;
     height: 6rem;
     font-size: 2.5rem;
