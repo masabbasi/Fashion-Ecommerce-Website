@@ -948,6 +948,7 @@ Newsletter - Start
   border: none;
   overflow: hidden;
 	cursor: none;
+	flex-shrink: 0;
 }
 
 .newsletterEmail button:hover {
