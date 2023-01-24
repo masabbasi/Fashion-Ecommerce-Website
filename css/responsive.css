@@ -71,6 +71,9 @@
     width: 72rem;
   }
 
+	a {
+		cursor: pointer;
+	}
 	.btn {
 		cursor: pointer;
 	}
@@ -242,10 +245,6 @@
 	.socialMedia div {
 		cursor: pointer;
 		transition: var(--transitionBColor);
-	}
-
-	.socialMedia div:hover {
-		background-color: var(--primaryColorHover);
 	}
 }
 

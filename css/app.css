@@ -69,6 +69,7 @@ Reset - Start
 ------------------------------*/
 a {
   text-decoration: none;
+	cursor: none;
   color: var(--darkGrey);
 	transition: var(--transitionColor);
 }
@@ -983,6 +984,10 @@ Social Media - Start
   margin-left: 1rem;
   overflow: hidden;
 	cursor: none;
+}
+
+.socialMedia div:hover {
+	background-color: var(--primaryColorHover);
 }
 
 .dark-theme .socialMedia div svg path{
