@@ -165,8 +165,6 @@
 	--swiper-navigation-size:44px
 }
 .swiper-button-next,.swiper-button-prev{
-	/* position:absolute;
-	bottom: 3rem; */
 	margin-top:calc(0px - (var(--swiper-navigation-size)/ 2));
 	z-index:10;
 	cursor:pointer;
@@ -565,4 +563,10 @@ button.swiper-pagination-bullet{
 	-webkit-backface-visibility:hidden;
 	backface-visibility:hidden;
 	overflow:hidden
+}
+
+@media (max-width:767px) {
+	.swiper-button-next,.swiper-button-prev{
+		cursor:none;
+	}
 }

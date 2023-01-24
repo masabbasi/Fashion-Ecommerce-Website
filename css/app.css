@@ -18,6 +18,8 @@ Fonts Variables
 Other Variables
 ------------------------------*/
   --transitionAll: all 0.5s ease-in;
+  --transitionBColor: background-color 0.3s ease-in;
+  --transitionColor: color 0.2s ease-in;
 }
 
 :root.dark-theme {
@@ -48,6 +50,8 @@ body {
   overflow-x: hidden;
   font-family: "Ubuntu", sans-serif;
   background-color: #ffffff;
+	scroll-behavior: smooth;
+	user-select: none;
 }
 
 .dark-theme body {
@@ -66,6 +70,7 @@ Reset - Start
 a {
   text-decoration: none;
   color: var(--darkGrey);
+	transition: var(--transitionColor);
 }
 
 a:hover {
@@ -95,7 +100,8 @@ Components - Start
   border-radius: 10rem;
   color: #ffffff;
   background-color: var(--secondaryColor);
-  transition: color 0.3s ease-in;
+  transition: var(--transitionBColor);
+	cursor: none;
 }
 
 .btn:hover {
@@ -166,6 +172,10 @@ header {
   align-items: center;
   flex-shrink: 0;
   padding: 0rem 1rem;
+}
+
+.menuIcon div {
+	cursor: none;
 }
 
 .dark-theme .menuIconImage img {
@@ -336,6 +346,7 @@ nav ul a:hover {
 }
 
 .headerContentLeft {
+	width: 100%;
   position: relative;
   margin-bottom: 2rem;
 }
@@ -354,6 +365,7 @@ nav ul a:hover {
 }
 
 .headerContentRight {
+	width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -642,6 +654,7 @@ New Arrivals - Start
   display: flex;
   justify-content: center;
   align-items: center;
+	cursor: none;
 }
 
 .productImage div:hover {
@@ -702,6 +715,7 @@ New Arrivals - Start
 
 .rate img {
   margin-left: 0.4rem;
+	cursor: none;
 }
 
 .rate img:first-child {
@@ -933,6 +947,7 @@ Newsletter - Start
   outline: none;
   border: none;
   overflow: hidden;
+	cursor: none;
 }
 
 .newsletterEmail button:hover {
@@ -967,6 +982,7 @@ Social Media - Start
   align-items: center;
   margin-left: 1rem;
   overflow: hidden;
+	cursor: none;
 }
 
 .dark-theme .socialMedia div svg path{

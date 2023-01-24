@@ -138,8 +138,13 @@
   }
 
   .headerContentRight {
+		width: 50%;
     align-items: flex-start;
   }
+
+	.headerContentLeft {
+	width: 50%;
+	}
 
   .headerContentRight h1 {
     text-align: left;
@@ -236,6 +241,7 @@
 
 	.socialMedia div {
 		cursor: pointer;
+		transition: var(--transitionBColor);
 	}
 
 	.socialMedia div:hover {
