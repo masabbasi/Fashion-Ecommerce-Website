@@ -514,14 +514,17 @@ Collection - Start
 .collectionBaby {
 	background-image: url(../assets/images/collectionBabyBackground.svg), linear-gradient( 51deg, rgba(237, 238, 242, 1) 0%, rgba(236, 240, 243, 1) 100% );
 	background-size: cover;
-	/* height: 30rem; */
 	display: flex;
 	justify-content: space-around;
 	overflow: hidden;
-	z-index: -2;
 	padding: 4rem 0;
 	flex-direction: column-reverse;
 	align-items: center;
+}
+
+.babyBtn:hover {
+	background-color: #ffffff;
+  color: #323232;
 }
 
 .dark-theme .collectionBaby {

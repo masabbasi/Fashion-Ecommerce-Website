@@ -3,7 +3,7 @@ const hamburgerMenu = $.querySelector(".hamburgerMenu");
 const menu = $.querySelector(".menu");
 const menuNav = $.querySelector(".menu nav");
 const themeBtn = $.querySelector(".themeBtn");
-const review = $.querySelectorAll(".review");
+const reviews = $.querySelectorAll(".review");
 
 //Mobile Menu
 hamburgerMenu.addEventListener("click", () => {
@@ -13,21 +13,20 @@ hamburgerMenu.addEventListener("click", () => {
 });
 window.addEventListener("resize", function (x) {
   if (this.innerWidth > 768) {
-    console.log("768");
     hamburgerMenu.classList.remove("hamburgerMenuOpen");
     menuNav.classList.remove("navInMobile");
     menu.classList.remove("menuMobileActive");
     if (localStorage.getItem("theme") === "dark-theme") {
-      review.style.backgroundImage =
+      reviews.style.backgroundImage =
         "url(../assets/images/reviews-rectangle-dark.svg)";
     } else {
-			review.forEach(function(item){
+			reviews.forEach(function(item){
 				item.style.backgroundImage =
         "url(../assets/images/reviews-rectangle.svg)";
 			})
     }
   } else {
-		review.forEach(function(item){
+		reviews.forEach(function(item){
 			item.style.backgroundImage =
 			"";
 		})
@@ -40,12 +39,12 @@ if (localStorage.getItem("theme") === "dark-theme") {
   document.documentElement.classList.add("dark-theme");
   themeBtn.innerHTML = '<img src="./assets/images/sun.svg">';
   if (x.matches) {
-		review.forEach(function(item){
+		reviews.forEach(function(item){
 			item.style.backgroundImage =
 			"url(../assets/images/reviews-rectangle-dark.svg)";
 		})
   } else {
-		review.forEach(function(item){
+		reviews.forEach(function(item){
 			item.style.backgroundImage =
 			"";
 		})
@@ -57,12 +56,12 @@ themeBtn.addEventListener("click", function () {
     localStorage.setItem("theme", "dark-theme");
     this.innerHTML = '<img src="./assets/images/sun.svg">';
     if (x.matches) {
-			review.forEach(function(item){
+			reviews.forEach(function(item){
 				item.style.backgroundImage =
         "url(../assets/images/reviews-rectangle-dark.svg)";
 			})
     } else {
-			review.forEach(function(item){
+			reviews.forEach(function(item){
 				item.style.backgroundImage =
         "";
 			})
@@ -71,12 +70,12 @@ themeBtn.addEventListener("click", function () {
     localStorage.setItem("theme", "light-theme");
     this.innerHTML = '<img src="./assets/images/moon.svg">';
     if (x.matches) {
-			review.forEach(function(item){
+			reviews.forEach(function(item){
 				item.style.backgroundImage =
         "url(../assets/images/reviews-rectangle.svg)";
 			})
     } else {
-			review.forEach(function(item){
+			reviews.forEach(function(item){
 				item.style.backgroundImage =
         "";
 			})
