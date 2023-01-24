@@ -1,14 +1,30 @@
 const $ = document;
 const hamburgerMenu = $.querySelector(".hamburgerMenu");
 const menuNav = $.querySelector(".menu nav");
-const categories = $.querySelectorAll(".categories div");
-const products = $.querySelectorAll(".product");
-const rateStars = $.querySelectorAll(".rate img");
+const themeBtn = $.querySelector(".themeBtn");
 
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuOpen");
   menuNav.classList.toggle("navInMobile");
 });
+
+
+//Dark Mode
+if (localStorage.getItem("theme") === "dark-theme") {
+	document.documentElement.classList.add("dark-theme");
+	themeBtn.innerHTML= '<img src="./assets/images/sun.svg">';
+}
+
+themeBtn.addEventListener("click",function(){
+	document.documentElement.classList.toggle("dark-theme");
+	if (document.documentElement.classList.contains("dark-theme")) {
+		localStorage.setItem("theme","dark-theme");
+		this.innerHTML=  '<img src="./assets/images/sun.svg">';
+	} else {
+		localStorage.setItem("theme","light-theme")
+		this.innerHTML=  '<img src="./assets/images/moon.svg">';
+	}
+})
 
 // swiper Bundle
 const swiper = new Swiper(".swiper", {

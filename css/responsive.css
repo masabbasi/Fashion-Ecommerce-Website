@@ -43,6 +43,21 @@
   .brands div:last-child {
     margin-right: 0;
   }
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footerLogo {
+    grid-column: 1/4;
+  }
+  .footerHelp,
+  .footerStore,
+  .footerSupport {
+    text-align: center;
+    grid-row: 2/3;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -51,9 +66,17 @@
     width: 72rem;
   }
 
+	.btn {
+		cursor: pointer;
+	}
+
   .menu {
     height: 6rem;
   }
+
+	.menuIcon div {
+		cursor: pointer;
+	}
 
   .hamburgerMenu {
     display: none;
@@ -61,7 +84,7 @@
 
   nav {
     position: relative;
-    top: auto;
+    right: auto;
     background-color: var(--lightGrey);
     display: flex;
     flex-direction: row;
@@ -98,7 +121,7 @@
     margin-right: 1rem;
   }
 
-  .menuIconImage:nth-child(3) {
+  .menuIconImage:nth-child(4) {
     margin-right: 0;
   }
 
@@ -127,13 +150,16 @@
     margin: 8rem -1rem 8rem;
   }
 
-  .newArrivalsTitle,
-  .trendingTitle {
+  .collectionWomen,
+  .collectionMen {
+    padding-left: 3rem;
+  }
+
+  .title {
     font-size: 4rem;
   }
 
-  .newArrivalsSubTitle,
-  .trendingSubTitle {
+  .subTitle {
     font-size: 1.5rem;
   }
 
@@ -145,7 +171,18 @@
     width: 8rem;
     height: 4rem;
     font-size: 1.8rem;
+		cursor: pointer;
   }
+
+	.categories div:hover {
+		color: white;
+		border-color: var(--primaryColor);
+		background-color: var(--primaryColor);
+	}
+
+	.productImage div {
+		cursor: pointer;
+	}
 
   .swiper-button-prev:after {
     width: 4rem;
@@ -160,6 +197,47 @@
   .rate img {
     cursor: pointer;
   }
+
+  .review {
+		width: 70rem;
+    background-image: url(../assets/images/reviews-rectangle.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    flex-direction: row;
+  }
+
+  .imageReview {
+    width: 14rem;
+    height: 14rem;
+  }
+  .textReview {
+    max-width: 40rem;
+  }
+
+  .newsletterTitle {
+    font-size: 2.5rem;
+  }
+
+  .newsletterSubTitle {
+    font-size: 1.5rem;
+  }
+
+  .newsletterEmail {
+    width: 35rem;
+  }
+
+	.newsletterEmail button{
+		cursor: pointer;
+	}
+
+	.socialMedia div {
+		cursor: pointer;
+	}
+
+	.socialMedia div:hover {
+		background-color: var(--primaryColorHover);
+	}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -171,6 +249,24 @@
   nav ul {
     font-size: 1.5rem;
     font-weight: 500;
+  }
+
+  nav ul a {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .headerContentRight h1 {
+    font-size: 4rem;
+  }
+
+  .headerContentRight span {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 18rem;
+    height: 5rem;
   }
 
   .attributes {
@@ -229,12 +325,67 @@
     width: 5rem;
     height: 5rem;
   }
+
+  .newsletterTitle {
+    font-size: 3rem;
+  }
+
+  .newsletterSubTitle {
+    font-size: 1.5rem;
+  }
+
+  .newsletterEmail {
+    width: 40rem;
+  }
+
+  .footer {
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.7rem;
+  }
+
+  .footerLogo {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    text-align: left;
+  }
+
+  .footerLogo p {
+    text-align: justify;
+  }
+
+  .footerHelp,
+  .footerStore,
+  .footerSupport {
+    grid-row: 1/2;
+    margin-top: 0;
+		text-align: left;
+		align-self: normal;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .container {
     width: 114rem;
+  }
+
+  .headerContentRight h1 {
+    font-size: 4.5rem;
+    line-height: 1.5;
+  }
+
+  .btn {
+    width: 20rem;
+    height: 7rem;
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 5rem;
+  }
+
+  .subTitle {
+    font-size: 2.2rem;
   }
 
   .attributes {
@@ -254,6 +405,10 @@
   .brands div:last-child {
     margin-right: 0;
   }
+
+  .footer {
+    font-size: 1.8rem;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
@@ -262,13 +417,73 @@
     width: 125rem;
   }
 
-  .newArrivalsTitle,
-  .trendingTitle {
+  .menu {
+    height: 10rem;
+  }
+
+  .logo {
+    font-size: 3.5rem;
+  }
+
+  #searchInput {
+    height: 5rem;
+  }
+
+  #searchInput::placeholder {
+    font-size: 2rem;
+  }
+
+  .search img {
+    width: 4rem;
+  }
+
+  .menuIconImage {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  nav {
+    flex-grow: 1;
+  }
+  nav ul a {
+    font-size: 2.2rem;
+  }
+
+  .title {
     font-size: 6rem;
   }
 
-  .newArrivalsSubTitle,
-  .trendingSubTitle {
+  .subTitle {
+    font-size: 2.5rem;
+  }
+
+  .headerContentRight h1 {
+    font-size: 6rem;
+  }
+
+  .attributesText {
+    font-size: 2rem;
+  }
+
+  .attribute {
+    margin: 0;
+  }
+
+  .collectionWomenContent p,
+  .collectionMenContent p {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .collectionBabyContent h2 {
+    font-size: 4rem;
+  }
+
+  .productDetail div:first-child span {
+    font-size: 2rem;
+  }
+
+  .productDetail p {
     font-size: 2.5rem;
   }
 
@@ -298,5 +513,17 @@
 
   .brands div:last-child {
     margin-right: 0;
+  }
+
+  .textReview {
+    max-width: 60rem;
+  }
+
+  .nameReview {
+    font-size: 2rem;
+  }
+
+  .mainTextReview {
+    font-size: 2rem;
   }
 }
