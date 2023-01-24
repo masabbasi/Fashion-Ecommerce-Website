@@ -5,7 +5,7 @@ Colors Variables
   --primaryColor: #fbd103;
   --primaryColorHover: #e2be07;
   --secondaryColor: #004743;
-	--secondaryColorHover: #065f5b;
+  --secondaryColorHover: #065f5b;
   --lightGrey: #f7f7f7;
   --darkGrey: #323232;
   /*------------------------------
@@ -26,7 +26,7 @@ Other Variables
   --primaryColor: #fbd103;
   --primaryColorHover: #e2be07;
   --secondaryColor: #004743;
-	--secondaryColorHover: #065f5b;
+  --secondaryColorHover: #065f5b;
   --lightGrey: #0f172a;
   --darkGrey: #d3d1d1;
 }
@@ -53,7 +53,7 @@ body {
 }
 
 .dark-theme body {
-	background-color: #1e293b;
+  background-color: #1e293b;
 }
 
 .container {
@@ -71,7 +71,7 @@ a {
 }
 
 a:hover {
-	color: var(--primaryColorHover);
+  color: var(--primaryColorHover);
 }
 
 ul {
@@ -105,12 +105,12 @@ Components - Start
   border-radius: 10rem;
   color: #ffffff;
   background-color: var(--secondaryColor);
-	transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
 }
 
 .btn:hover {
-	color: #FFFFFF;
-	background-color: var(--secondaryColorHover);
+  color: #ffffff;
+  background-color: var(--secondaryColorHover);
 }
 /*------------------------------
 Components - End
@@ -148,7 +148,7 @@ header {
 }
 
 .dark-theme .logo {
-color: #FFFFFF;
+  color: #ffffff;
 }
 
 .logo span:last-child {
@@ -159,14 +159,14 @@ color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-	flex-shrink: 0;
-	padding: 0rem 1rem;
+  flex-shrink: 0;
+  padding: 0rem 1rem;
 }
 
 .dark-theme .menuIcon {
-	background-color: #f7f7f7;
-	border-radius: 3rem;
-	padding: 0rem 1rem;
+  background-color: #f7f7f7;
+  border-radius: 3rem;
+  padding: 0rem 1rem;
 }
 
 .menuIconImage {
@@ -183,11 +183,11 @@ color: #FFFFFF;
 }
 
 .menuIconImage:first-child img {
-	width: 70%;
+  width: 70%;
 }
 
 .dark-theme .menuIconImage:first-child img {
-	width: 80%;
+  width: 80%;
 }
 
 .hamburgerMenu {
@@ -252,7 +252,7 @@ nav {
   width: 100%;
   right: 0;
   top: 5rem;
-	transition: var(--transitionAll);
+  transition: var(--transitionAll);
 }
 
 .navInMobile ul {
@@ -376,8 +376,8 @@ Attributes - Start
 }
 
 .dark-theme .attribute {
-	box-shadow: none;
-	border: 0.1rem solid var(--lightGrey);
+  box-shadow: none;
+  border: 0.1rem solid var(--lightGrey);
 }
 
 .attributesImage {
@@ -411,11 +411,11 @@ Collection - Start
 }
 
 .dark-theme .collectionBtn {
-	color: var(--lightGrey);
+  color: var(--lightGrey);
 }
 
 .dark-theme .collectionBtn:hover {
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 .collectionWomen,
@@ -494,12 +494,8 @@ Collection - Start
 }
 
 .dark-theme .collectionBaby {
-	background-image: url(../assets/images/collectionBabyBackground.svg),
-	linear-gradient(
-		51deg,
-		rgb(205, 207, 218) 0%,
-		rgb(66, 69, 71) 100%
-	);
+  background-image: url(../assets/images/collectionBabyBackground.svg),
+    linear-gradient(51deg, rgb(205, 207, 218) 0%, rgb(66, 69, 71) 100%);
 }
 
 .collectionBabyContent {
@@ -613,7 +609,7 @@ New Arrivals - Start
 }
 
 .categoryActive {
-	color: #FFFFFF !important;
+  color: #ffffff !important;
   border: 0.1rem solid var(--primaryColor) !important;
   background-color: var(--primaryColor);
 }
@@ -658,7 +654,7 @@ New Arrivals - Start
 }
 
 .productImage div:hover {
-	background-color: var(--primaryColor);
+  background-color: var(--primaryColor);
 }
 
 .productImage div img {
@@ -705,6 +701,12 @@ New Arrivals - Start
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.dark-theme .rate {
+	border-radius: 1rem;
+  background-color: #ffffff;
 }
 
 .rate img {
@@ -750,6 +752,15 @@ New Arrivals - Start
 
 .swiperButton div:first-child {
   margin-right: 2rem;
+}
+
+.swiperButton div {
+	padding: 0.5rem;
+}
+
+.dark-theme .swiperButton div {
+	border-radius: 50%;
+	background-color: #ffffff;
 }
 /*------------------------------
 New Arrivals - End
@@ -825,7 +836,7 @@ Reviews - Start
 
 .review {
   background-color: #1e293b;
-	color: var(--darkGrey);
+  color: var(--darkGrey);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -907,7 +918,7 @@ Newsletter - Start
 .newsletterEmail input {
   padding: 1rem;
   background-color: transparent;
-	color: var(--darkGrey);
+  color: var(--darkGrey);
   border: none;
   outline: none;
 }
@@ -927,7 +938,7 @@ Newsletter - Start
 }
 
 .newsletterEmail button:hover {
-	background-color: var(--primaryColorHover);
+  background-color: var(--primaryColorHover);
 }
 
 .newsletterEmail button img {
@@ -960,12 +971,12 @@ Social Media - Start
   overflow: hidden;
 }
 
-.socialMedia div:first-child {
-  margin-left: 0rem;
+.dark-theme .socialMedia div svg path{
+  fill: #ffffff;
 }
 
-.socialMedia div img {
-  width: 75%;
+.socialMedia div:first-child {
+  margin-left: 0rem;
 }
 /*------------------------------
 Social Media - End
@@ -978,7 +989,7 @@ Footer - Start
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
-	color: var(--darkGrey);
+  color: var(--darkGrey);
 }
 
 .footer h4 {

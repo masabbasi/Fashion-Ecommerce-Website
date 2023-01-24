@@ -176,8 +176,7 @@
 }
 
 .swiper-button-next:hover,.swiper-button-prev:hover {
-	border-radius: 50%;
-background-color: #fbd103;
+background-color: #fbd103 !important;
 }
 
 .swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{
