@@ -192,11 +192,6 @@ header {
   margin-right: 0.5rem;
 }
 
-.menuIconImage:hover {
-	border-radius: 50%;
-	background-color: var(--primaryColor);
-}
-
 .menuIconImage img {
   width: 60%;
 }
