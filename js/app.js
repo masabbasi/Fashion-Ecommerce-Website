@@ -1,5 +1,6 @@
 const $ = document;
 const hamburgerMenu = $.querySelector(".hamburgerMenu");
+const menu = $.querySelector(".menu");
 const menuNav = $.querySelector(".menu nav");
 const themeBtn = $.querySelector(".themeBtn");
 const review = $.querySelector(".review");
@@ -8,6 +9,15 @@ const review = $.querySelector(".review");
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuOpen");
   menuNav.classList.toggle("navInMobile");
+	menu.classList.toggle("menuMobileActive");
+});
+window.addEventListener("resize", function(x){
+	if (this.innerWidth>768) {
+		console.log("768");
+		hamburgerMenu.classList.remove("hamburgerMenuOpen");
+		menuNav.classList.remove("navInMobile");
+		menu.classList.remove("menuMobileActive");
+	}
 });
 
 

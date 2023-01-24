@@ -99,6 +99,7 @@
     width: 100%;
     position: relative;
     right: auto;
+		display: flex;
     flex-direction: row;
     align-items: center;
     height: auto;

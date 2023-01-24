@@ -147,6 +147,15 @@ header {
   justify-content: center;
 }
 
+.menuMobileActive {
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+z-index: 3;
+background-color: var(--lightGrey);
+} 
+
 .menuContainer {
   display: flex;
   justify-content: space-between;
@@ -260,17 +269,17 @@ nav {
   position: fixed;
   background-color: var(--lightGrey);
   height: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  align-items: center;
   z-index: 2;
 }
 
 .navInMobile {
+	display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
 	width: 100%;
   right: 0;
-  top: 6rem;
+  top: 5rem;
   transition: var(--transitionAll);
 }
 
