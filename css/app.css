@@ -8,14 +8,12 @@ Colors Variables
   --secondaryColorHover: #065f5b;
   --lightGrey: #f7f7f7;
   --darkGrey: #323232;
+
   /*------------------------------
 Fonts Variables
 ------------------------------*/
-  /* --font-reg: "Poppins Regular", Arial, Helvetica, sans-serif;
-  --font-med: "Poppins Medium", Arial, Helvetica, sans-serif;
-  --font-sb: "Poppins SemiBold", Arial, Helvetica, sans-serif;
-  --font-bold: "Poppins Bold", Arial, Helvetica, sans-serif;
-  --font-black: "Poppins Black", Arial, Helvetica, sans-serif; */
+/* Nothing */
+
   /*------------------------------
 Other Variables
 ------------------------------*/
@@ -73,12 +71,6 @@ a {
 a:hover {
   color: var(--primaryColorHover);
 }
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
 /*------------------------------
 Reset - End
 ------------------------------*/
@@ -86,9 +78,7 @@ Reset - End
 /*------------------------------
 Helper Classes - Start
 ------------------------------*/
-.h-full {
-  height: 100%;
-}
+/* Nothng */
 /*------------------------------
 Helper Classes - End
 ------------------------------*/
@@ -112,6 +102,20 @@ Components - Start
   color: #ffffff;
   background-color: var(--secondaryColorHover);
 }
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--darkGrey);
+}
+
+.subTitle {
+  font-size: 1.2rem;
+  color: var(--darkGrey);
+  text-align: center;
+  margin-bottom: 3rem;
+}
 /*------------------------------
 Components - End
 ------------------------------*/
@@ -119,6 +123,7 @@ Components - End
 /*------------------------------
 					App - Start
 ------------------------------*/
+
 /*------------------------------
 Header - Start
 ------------------------------*/
@@ -366,10 +371,10 @@ nav ul a:hover {
 /*------------------------------
 Header - End
 ------------------------------*/
+
 /*------------------------------
 Attributes - Start
 ------------------------------*/
-
 .attributes {
   display: grid;
   grid-template-columns: 1fr;
@@ -401,10 +406,10 @@ Attributes - Start
 .attributesText p:first-child {
   font-weight: bold;
 }
-
 /*------------------------------
 Attributes - End
 ------------------------------*/
+
 /*------------------------------
 Collection - Start
 ------------------------------*/
@@ -486,19 +491,16 @@ Collection - Start
 }
 
 .collectionBaby {
-  background-image: url(../assets/images/collectionBabyBackground.svg),
-    linear-gradient(
-      51deg,
-      rgba(237, 238, 242, 1) 0%,
-      rgba(236, 240, 243, 1) 100%
-    );
-  background-size: cover;
-  height: 30rem;
-  display: flex;
-  justify-content: space-around;
-  overflow: hidden;
-  z-index: -2;
-  padding: 4rem 0;
+	background-image: url(../assets/images/collectionBabyBackground.svg), linear-gradient( 51deg, rgba(237, 238, 242, 1) 0%, rgba(236, 240, 243, 1) 100% );
+	background-size: cover;
+	/* height: 30rem; */
+	display: flex;
+	justify-content: space-around;
+	overflow: hidden;
+	z-index: -2;
+	padding: 4rem 0;
+	flex-direction: column-reverse;
+	align-items: center;
 }
 
 .dark-theme .collectionBaby {
@@ -565,6 +567,7 @@ Collection - Start
 /*------------------------------
 Collection - End
 ------------------------------*/
+
 /*------------------------------
 New Arrivals - Start
 ------------------------------*/
@@ -573,26 +576,6 @@ New Arrivals - Start
 .reviews,
 .newsletter {
   margin: 5rem 0;
-}
-
-.newArrivalsTitle,
-.trendingTitle,
-.reviewsTitle,
-.newsletterTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  color: var(--darkGrey);
-}
-
-.newArrivalsSubTitle,
-.trendingSubTitle,
-.reviewsSubTitle,
-.newsletterSubTitle {
-  font-size: 1.2rem;
-  color: var(--darkGrey);
-  text-align: center;
-  margin-bottom: 3rem;
 }
 
 .categories {
@@ -773,6 +756,7 @@ New Arrivals - Start
 /*------------------------------
 New Arrivals - End
 ------------------------------*/
+
 /*------------------------------
 Top Brands - Start
 ------------------------------*/
@@ -827,6 +811,7 @@ Top Brands - Start
 /*------------------------------
 Top Brands - End
 ------------------------------*/
+
 /*------------------------------
 Trending - Start
 ------------------------------*/
@@ -834,6 +819,7 @@ Trending - Start
 /*------------------------------
 Trending - End
 ------------------------------*/
+
 /*------------------------------
 Reviews - Start
 ------------------------------*/
@@ -881,10 +867,10 @@ Reviews - Start
 .nameReview {
   font-weight: bold;
 }
-
 /*------------------------------
 Reviews - End
 ------------------------------*/
+
 /*------------------------------
 Newsletter - Start
 ------------------------------*/
@@ -956,10 +942,10 @@ Newsletter - Start
 .newsletterEmail button img {
   width: 80%;
 }
-
 /*------------------------------
 Newsletter - End
 ------------------------------*/
+
 /*------------------------------
 Social Media - Start
 ------------------------------*/
@@ -993,6 +979,7 @@ Social Media - Start
 /*------------------------------
 Social Media - End
 ------------------------------*/
+
 /*------------------------------
 Footer - Start
 ------------------------------*/
@@ -1019,10 +1006,10 @@ Footer - Start
   text-align: center;
   margin-top: 2rem;
 }
-
 /*------------------------------
 Fooer - End
 ------------------------------*/
+
 /*------------------------------
 					App - End
 ------------------------------*/

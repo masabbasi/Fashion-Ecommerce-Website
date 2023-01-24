@@ -23,6 +23,11 @@
     margin-bottom: 1rem;
   }
 
+	.collectionBaby {
+		height: 24rem;
+		flex-direction: row;
+	}
+
   .collectionBabyContent h2 {
     font-size: 3rem;
   }
@@ -374,7 +379,7 @@
 
   .btn {
     width: 20rem;
-    height: 7rem;
+    height: 6rem;
     font-size: 3rem;
   }
 
