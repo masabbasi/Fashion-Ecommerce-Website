@@ -848,16 +848,30 @@ Reviews - Start
 ------------------------------*/
 .reviews {
   background-color: var(--lightGrey);
-  padding: 3rem 1rem 2rem;
+  padding: 1rem 1rem 2rem;
+	overflow: hidden;
+}
+
+.swiperReview {
+	position: relative;
+}
+
+.swiperButtonReview {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
 }
 
 .review {
+	width: 85%;
   background-color: #FFFFFF;
   color: var(--darkGrey);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
+  padding: 3rem 3rem 5rem;
   margin: 0 auto;
 }
 

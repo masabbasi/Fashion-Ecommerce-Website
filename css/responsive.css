@@ -99,7 +99,7 @@
     width: 100%;
     position: relative;
     right: auto;
-		display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     height: auto;
@@ -217,12 +217,23 @@
   }
 
   .review {
-    width: 70rem;
+    width: 60rem;
     background-image: url(../assets/images/reviews-rectangle.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-color: transparent;
     flex-direction: row;
+  }
+
+  .swiperButtonReview {
+    left: auto;
+    right: 12rem;
+    bottom: 4rem;
+    transform: translateX(0);
+  }
+
+  .dark-theme .review {
+    background-color: transparent;
   }
 
   .imageReview {
@@ -269,7 +280,7 @@
   nav ul a {
     font-size: 1.8rem;
     font-weight: 400;
-		margin-right: 2rem;
+    margin-right: 2rem;
   }
 
   .headerContentRight h1 {
@@ -354,6 +365,16 @@
     width: 40rem;
   }
 
+  .review {
+    width: 70rem;
+    background-size: cover;
+		bottom: 1rem;
+  }
+
+  .swiperButtonReview {
+    right: 22rem;
+  }
+
   .footer {
     grid-template-columns: repeat(4, 1fr);
     font-size: 1.7rem;
@@ -424,6 +445,10 @@
 
   .brands div:last-child {
     margin-right: 0;
+  }
+
+  .swiperButtonReview {
+    right: 30rem;
   }
 
   .footer {
@@ -533,6 +558,14 @@
 
   .brands div:last-child {
     margin-right: 0;
+  }
+
+  .review {
+    width: 90rem;
+  }
+
+  .swiperButtonReview {
+    right: 32rem;
   }
 
   .textReview {
