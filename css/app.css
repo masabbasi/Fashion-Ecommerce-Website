@@ -17,7 +17,7 @@ Fonts Variables
   /*------------------------------
 Other Variables
 ------------------------------*/
-  --transitionAll: all 0.5s ease-in;
+  --transitionAll: all 0.4s ease-in;
   --transitionBColor: background-color 0.3s ease-in;
   --transitionColor: color 0.2s ease-in;
 }
@@ -256,8 +256,8 @@ header {
 }
 
 nav {
+	width: 0;
   position: absolute;
-  right: -100rem;
   background-color: var(--lightGrey);
   height: 100vh;
   display: flex;
@@ -268,9 +268,9 @@ nav {
 }
 
 .navInMobile {
-  width: 100%;
+	width: 100%;
   right: 0;
-  top: 5rem;
+  top: 6rem;
   transition: var(--transitionAll);
 }
 
