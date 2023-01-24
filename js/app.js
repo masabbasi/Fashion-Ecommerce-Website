@@ -4,6 +4,7 @@ const menuNav = $.querySelector(".menu nav");
 const themeBtn = $.querySelector(".themeBtn");
 const review = $.querySelector(".review");
 
+//Mobile Menu
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuOpen");
   menuNav.classList.toggle("navInMobile");
@@ -42,7 +43,7 @@ themeBtn.addEventListener("click",function(){
 	}
 })
 
-// swiper Bundle
+// Slider
 const swiper = new Swiper(".swiper", {
   // Optional parameters
   direction: "horizontal",

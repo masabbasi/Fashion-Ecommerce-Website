@@ -393,17 +393,21 @@ Attributes - Start
   display: flex;
   align-items: center;
   padding: 1rem;
-  box-shadow: 0px 2px 2px #d4d2d2;
+	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .dark-theme .attribute {
   box-shadow: none;
-  border: 0.1rem solid var(--lightGrey);
+	box-shadow: 0px 10px 15px -3px rgba(214, 209, 209, 0.116);
 }
 
 .attributesImage {
   width: 20%;
   margin-right: 3rem;
+}
+
+.attributesImage img {
+	border-radius: 50%;
 }
 
 .attributesText {
