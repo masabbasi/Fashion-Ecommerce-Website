@@ -2,6 +2,7 @@ const $ = document;
 const hamburgerMenu = $.querySelector(".hamburgerMenu");
 const menuNav = $.querySelector(".menu nav");
 const themeBtn = $.querySelector(".themeBtn");
+const review = $.querySelector(".review");
 
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuOpen");
@@ -13,6 +14,11 @@ hamburgerMenu.addEventListener("click", () => {
 if (localStorage.getItem("theme") === "dark-theme") {
 	document.documentElement.classList.add("dark-theme");
 	themeBtn.innerHTML= '<img src="./assets/images/sun.svg">';
+	if ((window.matchMedia("(min-width: 768px)")).matches) {
+		review.style.backgroundImage= 'url(../assets/images/reviews-rectangle-dark.svg)';
+	} else {
+		review.style.backgroundImage= '';
+	}
 }
 
 themeBtn.addEventListener("click",function(){
@@ -20,9 +26,20 @@ themeBtn.addEventListener("click",function(){
 	if (document.documentElement.classList.contains("dark-theme")) {
 		localStorage.setItem("theme","dark-theme");
 		this.innerHTML=  '<img src="./assets/images/sun.svg">';
+		if ((window.matchMedia("(min-width: 768px)")).matches) {
+			review.style.backgroundImage= 'url(../assets/images/reviews-rectangle-dark.svg)';
+			console.log("Hi");
+		} else {
+			review.style.backgroundImage= '';
+		}
 	} else {
 		localStorage.setItem("theme","light-theme")
 		this.innerHTML=  '<img src="./assets/images/moon.svg">';
+		if ((window.matchMedia("(min-width: 768px)")).matches) {
+			review.style.backgroundImage= 'url(../assets/images/reviews-rectangle.svg)';
+		} else {
+			review.style.backgroundImage= '';
+		}
 	}
 })
 
