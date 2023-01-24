@@ -163,10 +163,8 @@ header {
   padding: 0rem 1rem;
 }
 
-.dark-theme .menuIcon {
-  background-color: #f7f7f7;
-  border-radius: 3rem;
-  padding: 0rem 1rem;
+.dark-theme .menuIconImage img {
+	filter: brightness(5);
 }
 
 .menuIconImage {
@@ -222,6 +220,11 @@ header {
   border-radius: 1rem;
   background-color: var(--secondaryColor);
   transition: var(--transitionAll);
+}
+
+.dark-theme .hamburgerMenuLine,.dark-theme .hamburgerMenuLine::before,
+.dark-theme .hamburgerMenuLine::after {
+	background-color: var(--darkGrey);
 }
 
 .hamburgerMenuLine::after {
@@ -850,8 +853,7 @@ Reviews - Start
 }
 
 .dark-theme .review {
-	/* background-color: #1e293b; */
-	background-color: transparent;
+	background-color: #1e293b;
 }
 
 .imageReview {
@@ -934,13 +936,13 @@ Newsletter - Start
 }
 
 .newsletterEmail button {
-  width: 5rem;
-  height: 5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   background-color: var(--primaryColor);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 50%;
   outline: none;
   border: none;
