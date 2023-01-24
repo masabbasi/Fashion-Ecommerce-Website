@@ -270,6 +270,7 @@ nav {
   background-color: var(--lightGrey);
   height: 100%;
   z-index: 2;
+	overflow: hidden;
 }
 
 .navInMobile {
@@ -936,6 +937,7 @@ Newsletter - Start
 }
 
 .newsletterEmail input {
+	width: 75%;
   padding: 1rem;
   background-color: transparent;
   color: var(--darkGrey);
