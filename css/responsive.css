@@ -85,14 +85,12 @@
   nav {
     position: relative;
     right: auto;
-    background-color: var(--lightGrey);
-    display: flex;
     flex-direction: row;
     align-items: center;
     height: auto;
     justify-content: center;
     z-index: 0;
-    margin: 0 3rem;
+    margin: 0 0.5rem;
   }
 
   nav ul {
@@ -126,7 +124,7 @@
   }
 
   .search {
-    margin-left: 2rem;
+    margin-left: 1rem;
     flex-grow: 1;
   }
 
