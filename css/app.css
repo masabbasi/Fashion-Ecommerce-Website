@@ -160,6 +160,7 @@ color: #FFFFFF;
   justify-content: center;
   align-items: center;
 	flex-shrink: 0;
+	padding: 0rem 1rem;
 }
 
 .dark-theme .menuIcon {
@@ -182,6 +183,10 @@ color: #FFFFFF;
 }
 
 .menuIconImage:first-child img {
+	width: 70%;
+}
+
+.dark-theme .menuIconImage:first-child img {
 	width: 80%;
 }
 
