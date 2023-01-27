@@ -1,0 +1,61 @@
+.basketContainer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.basketTable {
+  width: 100%;
+  height: 200%;
+  text-align: center;
+	color: var(--darkGrey);
+	margin-top: 8rem;
+	padding: 1rem;
+}
+
+.basketTable img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.dark-theme td svg path{
+	fill: #FFFFFF;
+}
+
+.basketTable tr {
+	border-bottom: 0.1rem solid var(--darkGrey);
+}
+
+.basketTable td,.basketTable th{
+	margin: 0.5rem;
+	/* border: 1px solid red;
+	display: flex;
+	justify-content: center;
+	align-items: center; */
+}
+
+.basketTable tfoot tr {
+	border-bottom: none;
+	justify-content: center;
+}
+
+.basketTable td, .basketTable th {
+  padding: 3px 3px;
+	font-size: 13px;
+}
+
+.basketTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--darkGrey);
+  text-align: center;
+}
+.basketTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF4B70;
+}
+.basketTable tfoot td {
+  font-size: 14px;
+}

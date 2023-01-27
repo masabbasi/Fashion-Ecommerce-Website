@@ -12,7 +12,7 @@ Colors Variables
   /*------------------------------
 Fonts Variables
 ------------------------------*/
-/* Nothing */
+  /* Nothing */
 
   /*------------------------------
 Other Variables
@@ -20,6 +20,8 @@ Other Variables
   --transitionAll: all 0.4s ease-in;
   --transitionBColor: background-color 0.3s ease-in;
   --transitionColor: color 0.2s ease-in;
+  --Basket: "0";
+  --Favorite: "0";
 }
 
 :root.dark-theme {
@@ -50,8 +52,8 @@ body {
   overflow-x: hidden;
   font-family: "Ubuntu", sans-serif;
   background-color: #ffffff;
-	scroll-behavior: smooth;
-	user-select: none;
+  scroll-behavior: smooth;
+  user-select: none;
 }
 
 .dark-theme body {
@@ -69,9 +71,9 @@ Reset - Start
 ------------------------------*/
 a {
   text-decoration: none;
-	cursor: none;
+  cursor: none;
   color: var(--darkGrey);
-	transition: var(--transitionColor);
+  transition: var(--transitionColor);
 }
 
 a:hover {
@@ -102,7 +104,7 @@ Components - Start
   color: #ffffff;
   background-color: var(--secondaryColor);
   transition: var(--transitionBColor);
-	cursor: none;
+  cursor: none;
 }
 
 .btn:hover {
@@ -148,13 +150,13 @@ header {
 }
 
 .menuMobileActive {
-position: fixed;
-left: 0;
-right: 0;
-top: 0;
-z-index: 3;
-background-color: var(--lightGrey);
-} 
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  background-color: var(--lightGrey);
+}
 
 .menuContainer {
   display: flex;
@@ -172,7 +174,7 @@ background-color: var(--lightGrey);
   color: #ffffff;
 }
 
-.logo span:last-child {
+.logo a span:last-child {
   color: var(--primaryColor);
 }
 
@@ -181,15 +183,14 @@ background-color: var(--lightGrey);
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  padding: 0rem 1rem;
 }
 
 .menuIcon div {
-	cursor: none;
+  cursor: none;
 }
 
 .dark-theme .menuIconImage img {
-	filter: brightness(5);
+  filter: brightness(5);
 }
 
 .menuIconImage {
@@ -211,6 +212,32 @@ background-color: var(--lightGrey);
 
 .dark-theme .menuIconImage:first-child img {
   width: 80%;
+}
+
+.menuIconBasket,.menuIconFavorite {
+  position: relative;
+}
+
+.menuIconBasket::after,.menuIconFavorite:after {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: var(--primaryColorHover);
+}
+
+.menuIconBasket::after{
+  content: var(--Basket);
+}
+.menuIconFavorite:after {
+	content:var(--Favorite);
 }
 
 .hamburgerMenu {
@@ -242,9 +269,10 @@ background-color: var(--lightGrey);
   transition: var(--transitionAll);
 }
 
-.dark-theme .hamburgerMenuLine,.dark-theme .hamburgerMenuLine::before,
+.dark-theme .hamburgerMenuLine,
+.dark-theme .hamburgerMenuLine::before,
 .dark-theme .hamburgerMenuLine::after {
-	background-color: var(--darkGrey);
+  background-color: var(--darkGrey);
 }
 
 .hamburgerMenuLine::after {
@@ -265,20 +293,20 @@ background-color: var(--lightGrey);
 }
 
 nav {
-	width: 0;
+  width: 0;
   position: fixed;
   background-color: var(--lightGrey);
   height: 100%;
   z-index: 2;
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .navInMobile {
-	display: flex;
+  display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
-	width: 100%;
+  width: 100%;
   right: 0;
   top: 5rem;
   transition: var(--transitionAll);
@@ -321,6 +349,7 @@ nav ul a:hover {
 #searchInput {
   width: 100%;
   background-color: #e5e5e5;
+  color: #323232;
   border-radius: 10rem;
   height: 3rem;
   padding: 1rem 2.5rem 1rem 1.5rem;
@@ -351,7 +380,7 @@ nav ul a:hover {
 }
 
 .headerContentLeft {
-	width: 100%;
+  width: 100%;
   position: relative;
   margin-bottom: 2rem;
 }
@@ -370,7 +399,7 @@ nav ul a:hover {
 }
 
 .headerContentRight {
-	width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -402,12 +431,12 @@ Attributes - Start
   display: flex;
   align-items: center;
   padding: 1rem;
-	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme .attribute {
   box-shadow: none;
-	box-shadow: 0px 10px 15px -3px rgba(214, 209, 209, 0.116);
+  box-shadow: 0px 10px 15px -3px rgba(214, 209, 209, 0.116);
 }
 
 .attributesImage {
@@ -416,7 +445,7 @@ Attributes - Start
 }
 
 .attributesImage img {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 .attributesText {
@@ -512,18 +541,23 @@ Collection - Start
 }
 
 .collectionBaby {
-	background-image: url(../assets/images/collectionBabyBackground.svg), linear-gradient( 51deg, rgba(237, 238, 242, 1) 0%, rgba(236, 240, 243, 1) 100% );
-	background-size: cover;
-	display: flex;
-	justify-content: space-around;
-	overflow: hidden;
-	padding: 4rem 0;
-	flex-direction: column-reverse;
-	align-items: center;
+  background-image: url(../assets/images/collectionBabyBackground.svg),
+    linear-gradient(
+      51deg,
+      rgba(237, 238, 242, 1) 0%,
+      rgba(236, 240, 243, 1) 100%
+    );
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 4rem 0;
+  flex-direction: column-reverse;
+  align-items: center;
 }
 
 .babyBtn:hover {
-	background-color: #ffffff;
+  background-color: #ffffff;
   color: #323232;
 }
 
@@ -666,7 +700,7 @@ New Arrivals - Start
   display: flex;
   justify-content: center;
   align-items: center;
-	cursor: none;
+  cursor: none;
 }
 
 .productImage div:hover {
@@ -689,9 +723,17 @@ New Arrivals - Start
   background-color: #ffffff;
 }
 
+.productFavoriteActive {
+  background-color: var(--primaryColor);
+}
+
 .productBag {
   bottom: 11rem;
   background-color: #ffffff;
+}
+
+.productBasketActive {
+  background-color: var(--primaryColor);
 }
 
 .productPhotos {
@@ -721,13 +763,13 @@ New Arrivals - Start
 }
 
 .dark-theme .rate {
-	border-radius: 1rem;
+  border-radius: 1rem;
   background-color: #ffffff;
 }
 
 .rate img {
   margin-left: 0.4rem;
-	cursor: none;
+  cursor: none;
 }
 
 .rate img:first-child {
@@ -772,12 +814,12 @@ New Arrivals - Start
 }
 
 .swiperButton div {
-	padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .dark-theme .swiperButton div {
-	border-radius: 50%;
-	background-color: #ffffff;
+  border-radius: 50%;
+  background-color: #ffffff;
 }
 /*------------------------------
 New Arrivals - End
@@ -852,24 +894,24 @@ Reviews - Start
 .reviews {
   background-color: var(--lightGrey);
   padding: 1rem 1rem 2rem;
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .swiperReview {
-	position: relative;
+  position: relative;
 }
 
 .swiperButtonReview {
-	position: absolute;
-	bottom: 1rem;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 1;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .review {
-	width: 85%;
-  background-color: #FFFFFF;
+  width: 85%;
+  background-color: #ffffff;
   color: var(--darkGrey);
   display: flex;
   flex-direction: column;
@@ -879,7 +921,7 @@ Reviews - Start
 }
 
 .dark-theme .review {
-	background-color: #1e293b;
+  background-color: #1e293b;
 }
 
 .imageReview {
@@ -954,7 +996,7 @@ Newsletter - Start
 }
 
 .newsletterEmail input {
-	width: 75%;
+  width: 75%;
   padding: 1rem;
   background-color: transparent;
   color: var(--darkGrey);
@@ -974,8 +1016,8 @@ Newsletter - Start
   outline: none;
   border: none;
   overflow: hidden;
-	cursor: none;
-	flex-shrink: 0;
+  cursor: none;
+  flex-shrink: 0;
 }
 
 .newsletterEmail button:hover {
@@ -1010,14 +1052,14 @@ Social Media - Start
   align-items: center;
   margin-left: 1rem;
   overflow: hidden;
-	cursor: none;
+  cursor: none;
 }
 
 .socialMedia div:hover {
-	background-color: var(--primaryColorHover);
+  background-color: var(--primaryColorHover);
 }
 
-.dark-theme .socialMedia div svg path{
+.dark-theme .socialMedia div svg path {
   fill: #ffffff;
 }
 
