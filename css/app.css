@@ -423,19 +423,20 @@ Attributes - Start
 ------------------------------*/
 .attributes {
   display: grid;
-  grid-template-columns: 1fr;لهف
+  grid-template-columns: 1fr;
+  margin: 4rem 0;
 }
 
 .attribute {
   display: flex;
   align-items: center;
   padding: 1rem;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme .attribute {
   box-shadow: none;
-  box-shadow: 0px 10px 15px -3px rgba(214, 209, 209, 0.116);
+  box-shadow: 0px 0px 15px -3px rgba(214, 209, 209, 0.116);
 }
 
 .attributesImage {
@@ -737,7 +738,7 @@ New Arrivals - Start
 }
 
 .productBasketNotification::before {
-	content: "Add To Basket";
+	content: "Added To Basket";
 	position: absolute;
 	right: calc(100% + 1rem);
 	color: #FFFFFF;
