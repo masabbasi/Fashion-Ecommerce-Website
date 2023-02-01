@@ -1,8 +1,8 @@
-export function showProduct(array) {
-  const swiperNewArrivals = document.querySelector(".swiperNewArrivals");
-  array.forEach((item) => {
-    const { category, images, id, tag, title, price } = item;
-    let tagEl;
+export function showTrendingProduct(array) {
+  const swiperTrending = document.querySelector(".swiperTrending");
+	for (let i= 0;i<4;i++){
+		const {category, images, id, tag, title, price} = array[i];
+		let tagEl;
     if (tag != "") {
       tagEl = `<div class="productTag">${tag}</div>`;
     } else {
@@ -16,9 +16,6 @@ export function showProduct(array) {
 				<div class="productBag" data-id="${id}"><img src="./assets/images/Bag.svg"></div>
 				<div class="productPhotos"><img src="./assets/images/photos.svg"></div>
 				${tagEl}
-				
-				
-
 			</div>
 			<div class="productDetail">
 				<div>
@@ -37,8 +34,8 @@ export function showProduct(array) {
 		</div>
 	</div>
 		`;
-    if (swiperNewArrivals != null) {
-      swiperNewArrivals.innerHTML += createProduct;
-    }
-  });
+		if (swiperTrending != null) {
+			swiperTrending.innerHTML += createProduct;
+		}
+	}
 }

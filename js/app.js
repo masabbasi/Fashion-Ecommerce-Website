@@ -1,6 +1,7 @@
 import { users } from "./users.js";
 import { products } from "./products.js";
 import { showProduct } from "./showProduct.js";
+import { showTrendingProduct } from "./showTrendingProduct.js";
 
 const $ = document;
 const hamburgerMenu = $.querySelector(".hamburgerMenu");
@@ -96,32 +97,30 @@ themeBtn.addEventListener("click", function () {
   }
 });
 
+let sortedProducts = products;
+sortedProducts.sort((p1, p2) =>
+  p1.sale < p2.sale ? 1 : p1.sale > p2.sale ? -1 : 0
+);
+
 showProduct(products);
+showTrendingProduct(sortedProducts);
 
 const productBags = $.querySelectorAll(".productBag").forEach((item) => {
   item.addEventListener("click", () => {
-		item.classList.add("productBasketNotification");
-		setTimeout(()=>item.classList.remove("productBasketNotification"),500)
+    item.classList.add("productBasketNotification");
+    setTimeout(() => item.classList.remove("productBasketNotification"), 500);
     addToCart(+item.dataset.id);
   });
 });
 
 const productFavorite = $.querySelectorAll(".productFavorite").forEach((item) => {
-  item.addEventListener("click", () => {
-		item.classList.toggle("productFavoriteActive");
-		const productId = +item.dataset.id;
-		const findProduct = products.find((item) => item.id === productId);
-		const product = findProduct;
-		if (item.classList.contains("productFavoriteActive")) {
-			favorite.push(product);
-		} else {
-			const indexProduct = favorite.indexOf(product);
-			favorite.splice(indexProduct,1)
-		}
-		localStorage.setItem("favorite", JSON.stringify(favorite));
-		setFavoriteBallet();
-  });
-});
+    item.addEventListener("click", (e) =>{
+			item.classList.add("productFavoriteNotification");
+    setTimeout(() => item.classList.remove("productFavoriteNotification"), 500);
+      addToFavorite(+e.currentTarget.dataset.id)
+		});
+  }
+);
 
 export const addToCart = (productId) => {
   const findProduct = products.find((item) => item.id === productId);
@@ -159,6 +158,24 @@ export const addToCart = (productId) => {
 
   localStorage.setItem("basket", JSON.stringify(basket));
   setBasketBallet();
+};
+
+export const addToFavorite = (productId) => {
+  const findProduct = products.find((item) => item.id === productId);
+  const product = findProduct;
+	if ((favorite.find((item) => item.id === productId))!=null) {
+		const findFavoriteProduct = favorite.find((item) => item.id === productId);
+		const productFavorite = findFavoriteProduct;
+    
+			const indexProduct = favorite.indexOf(product);
+			favorite.splice(indexProduct, 1);
+		
+	} else {
+		favorite.push(product)
+	}
+
+  localStorage.setItem("favorite", JSON.stringify(favorite));
+  setFavoriteBallet();
 };
 
 export function setBasketBallet() {

@@ -51,7 +51,7 @@ export const products = [
     },
     tag: "",
     rate: 1,
-    sale: 4000,
+    sale: 1235,
   },
   {
     id: 5,
@@ -90,7 +90,7 @@ export const products = [
     },
     tag: "",
     rate: 2,
-    sale: 6454,
+    sale: 2454,
   },
   {
     id: 8,

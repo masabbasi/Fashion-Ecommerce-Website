@@ -716,6 +716,7 @@ New Arrivals - Start
   left: 1rem;
   top: 1rem;
   background-color: #ff7d1e;
+	color:#FFFFFF;
 }
 
 .productFavorite {
@@ -723,21 +724,17 @@ New Arrivals - Start
   background-color: #ffffff;
 }
 
-.productFavoriteActive {
-  background-color: var(--primaryColor);
-}
-
 .productBag {
 	bottom: 11rem;
   background-color: #ffffff;
 }
 
-.productBasketNotification {
+.productBasketNotification,.productFavoriteNotification {
 	position: relative;
 	transition: var(--transitionAll);
 }
 
-.productBasketNotification::before {
+.productBasketNotification::before,.productFavoriteNotification::before {
 	content: "Added To Basket";
 	position: absolute;
 	right: calc(100% + 1rem);
@@ -749,6 +746,10 @@ New Arrivals - Start
 display: flex;
 justify-content: center;
 align-items: center;
+}
+
+.productFavoriteNotification::before {
+	content: "Favorite";
 }
 
 .productPhotos {
