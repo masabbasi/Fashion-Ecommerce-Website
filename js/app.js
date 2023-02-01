@@ -14,6 +14,11 @@ if (localStorage.getItem("basket") != null) {
   basket = JSON.parse(localStorage.getItem("basket"));
 }
 
+let favorite = [];
+if (localStorage.getItem("favorite") != null) {
+  favorite = JSON.parse(localStorage.getItem("favorite"));
+}
+
 //Mobile Menu
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuOpen");
@@ -101,6 +106,23 @@ const productBags = $.querySelectorAll(".productBag").forEach((item) => {
   });
 });
 
+const productFavorite = $.querySelectorAll(".productFavorite").forEach((item) => {
+  item.addEventListener("click", () => {
+		item.classList.toggle("productFavoriteActive");
+		const productId = +item.dataset.id;
+		const findProduct = products.find((item) => item.id === productId);
+		const product = findProduct;
+		if (item.classList.contains("productFavoriteActive")) {
+			favorite.push(product);
+		} else {
+			const indexProduct = favorite.indexOf(product);
+			favorite.splice(indexProduct,1)
+		}
+		localStorage.setItem("favorite", JSON.stringify(favorite));
+		setFavoriteBallet();
+  });
+});
+
 export const addToCart = (productId) => {
   const findProduct = products.find((item) => item.id === productId);
   const product = findProduct;
@@ -155,4 +177,21 @@ export function setBasketBallet() {
   }
 }
 
+export function setFavoriteBallet() {
+  if (localStorage.getItem("favorite") != null) {
+    favorite = JSON.parse(localStorage.getItem("favorite"));
+  }
+  const menuIconFavorite = document.querySelectorAll(".menuIconImage")[2];
+  if (favorite.length != 0) {
+    menuIconFavorite.classList.add("menuIconFavorite");
+    document.documentElement.style.setProperty(
+      `--Favorite`,
+      `"${favorite.length}"`
+    );
+  } else {
+    menuIconFavorite.classList.remove("menuIconFavorite");
+  }
+}
+
 setBasketBallet();
+setFavoriteBallet();

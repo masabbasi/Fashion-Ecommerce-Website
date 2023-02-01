@@ -1,11 +1,11 @@
-.basketContainer {
+.favoriteContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.basketTable {
+.favoriteTable {
   width: 100%;
   height: 200%;
   text-align: center;
@@ -14,7 +14,7 @@
   padding: 1rem;
 }
 
-.basketTable img {
+.favoriteTable img {
   width: 3rem;
   height: 3rem;
 }
@@ -23,51 +23,32 @@
   fill: #ffffff;
 }
 
-.basketTable tr {
+.favoriteTable tr {
   border-bottom: 0.1rem solid var(--darkGrey);
 }
 
-.basketTable td,
-.basketTable th {
+.favoriteTable td,
+.favoriteTable th {
   margin: 0.5rem;
 }
 
-.basketTable tfoot tr {
-  border-bottom: none;
-  justify-content: center;
-}
-
-.basketTable td,
-.basketTable th {
+.favoriteTable td,
+.favoriteTable th {
   padding: 3px 3px;
   font-size: 13px;
 }
 
-.basketTable thead th {
+.favoriteTable thead th {
   font-size: 15px;
   font-weight: bold;
   color: var(--darkGrey);
   text-align: center;
 }
-.basketTable tfoot {
-  font-size: 14px;
-  font-weight: bold;
-  color: #ff4b70;
-}
-.basketTable tfoot td {
-  font-size: 14px;
-}
 
-.deleteProduct,.addProduct {
+.deleteProduct {
   cursor: pointer;
 }
 
-.btns {
-	display: flex;
-	justify-content: center;
+.btn {
 	margin-top: 5rem;
-}
-
-.btns .btn:first-child {
-	margin-right: 2rem;
 }
