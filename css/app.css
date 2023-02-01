@@ -423,8 +423,7 @@ Attributes - Start
 ------------------------------*/
 .attributes {
   display: grid;
-  grid-template-columns: 1fr;
-  margin: 4rem 0;
+  grid-template-columns: 1fr;لهف
 }
 
 .attribute {
