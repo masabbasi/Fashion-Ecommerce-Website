@@ -5,12 +5,14 @@ export const products = [
     category: "Kids",
     title: "Yellow T-Shirt",
     price: {
-      main: "$180",
-      off: "$300",
+      main: 180,
+      off: 300,
     },
     tag: "40%",
     rate: 4,
     sale: 2324,
+		qty:0,
+		total:0
   },
   {
     id: 2,
@@ -18,8 +20,8 @@ export const products = [
     category: "Women",
     title: "Ethnic Kurti",
     price: {
-      main: "$220",
-      off: "$250",
+      main: 220,
+      off: 250,
     },
     tag: "",
     rate: 3,
@@ -31,8 +33,8 @@ export const products = [
     category: "Women",
     title: "Kurtis, Tunics & Tops",
     price: {
-      main: "$280",
-      off: "$350",
+      main: 280,
+      off: 350,
     },
     tag: "New",
     rate: 5,
@@ -44,8 +46,8 @@ export const products = [
     category: "Men",
     title: "Round Neck T-shirt",
     price: {
-      main: "$120",
-      off: "$150",
+      main: 120,
+      off: 150,
     },
     tag: "",
     rate: 1,
@@ -57,8 +59,8 @@ export const products = [
     category: "Kids",
     title: "Kurti Full Sleev",
     price: {
-      main: "$200",
-      off: "$300",
+      main: 200,
+      off: 300,
     },
     tag: "",
     rate: 4.5,
@@ -70,8 +72,8 @@ export const products = [
     category: "Women",
     title: "Silk Saree - Printied",
     price: {
-      main: "$320",
-      off: "$410",
+      main: 320,
+      off: 410,
     },
     tag: "",
     rate: 2,
@@ -83,8 +85,8 @@ export const products = [
     category: "Men",
     title: "Multi Purpose Jacket",
     price: {
-      main: "$510",
-      off: "$705",
+      main: 510,
+      off: 705,
     },
     tag: "",
     rate: 2,
@@ -96,11 +98,11 @@ export const products = [
     category: "Men",
     title: "Jacket",
     price: {
-      main: "$400",
-      off: "$480",
+      main: 400,
+      off: 480,
     },
     tag: "",
     rate: 2,
     sale: 1340,
   },
-];
+]

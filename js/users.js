@@ -14,4 +14,4 @@ export const users = [
       basket: [11, 44],
     },
   },
-];
+]
