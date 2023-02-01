@@ -65,3 +65,13 @@
 .deleteProduct {
   cursor: pointer;
 }
+
+.btns {
+	display: flex;
+	justify-content: center;
+	margin-top: 5rem;
+}
+
+.btns .btn:first-child {
+	margin-right: 2rem;
+}

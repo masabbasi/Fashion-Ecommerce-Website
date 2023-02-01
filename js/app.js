@@ -31,8 +31,10 @@ window.addEventListener("resize", function () {
       }
     } else {
       reviews.forEach(function (item) {
-        item.style.backgroundImage =
-          "url(../assets/images/reviews-rectangle.svg)";
+        if (reviews != null) {
+          item.style.backgroundImage =
+            "url(../assets/images/reviews-rectangle.svg)";
+        }
       });
     }
   } else {
@@ -92,11 +94,18 @@ themeBtn.addEventListener("click", function () {
 showProduct(products);
 
 const productBags = $.querySelectorAll(".productBag").forEach((item) => {
-  item.addEventListener("click", () => addToCart(+item.dataset.index));
+  item.addEventListener("click", () => {
+		item.classList.add("productBasketNotification");
+		setTimeout(()=>item.classList.remove("productBasketNotification"),500)
+    addToCart(+item.dataset.id);
+  });
 });
 
-const addToCart = (productIndex) => {
-  const product = products[productIndex];
+export const addToCart = (productId) => {
+  const findProduct = products.find((item) => item.id === productId);
+  const product = findProduct;
+
+  // const product = products[productIndex];
 
   let existingProduct = false;
 
@@ -147,5 +156,3 @@ export function setBasketBallet() {
 }
 
 setBasketBallet();
-
-console.log("EndApp");

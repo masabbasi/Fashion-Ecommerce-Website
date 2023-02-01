@@ -728,12 +728,27 @@ New Arrivals - Start
 }
 
 .productBag {
-  bottom: 11rem;
+	bottom: 11rem;
   background-color: #ffffff;
 }
 
-.productBasketActive {
-  background-color: var(--primaryColor);
+.productBasketNotification {
+	position: relative;
+	transition: var(--transitionAll);
+}
+
+.productBasketNotification::before {
+	content: "Add To Basket";
+	position: absolute;
+	right: calc(100% + 1rem);
+	color: #FFFFFF;
+	background-color: var(--secondaryColor);
+	width: 14rem;
+	height: 3rem;
+	border-radius: 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .productPhotos {
