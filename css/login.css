@@ -1,0 +1,93 @@
+.Sign {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.signTabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signTab {
+  color: var(--darkGrey);
+  padding: 2rem;
+  background-color: var(--lightGrey);
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+.activeTab {
+	background-color: var(--primaryColorHover);
+}
+
+/* .signInTab {
+} */
+
+.Signbody {
+	padding: 2rem 0 4rem;
+}
+
+.signUp {
+	display: none;
+}
+
+/* .signIn {
+} */
+
+a {
+  color: var(--primaryColorHover);
+}
+
+a:hover {
+  color: var(--primaryColor);
+}
+
+.signUpLink,.signInLink {
+	color: var(--primaryColorHover);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--darkGrey);
+}
+
+input {
+  width: 20rem;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  margin-bottom: 1rem;
+	background-color: var(--lightGrey);
+	color: var(--darkGrey);
+}
+
+input:focus {
+  outline: 0.1rem solid var(--primaryColor);
+}
+
+.showpassword {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#showpassword {
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}

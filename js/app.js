@@ -97,9 +97,9 @@ themeBtn.addEventListener("click", function () {
   }
 });
 
-let sortedProducts = products;
-sortedProducts.sort((p1, p2) =>
-  p1.sale < p2.sale ? 1 : p1.sale > p2.sale ? -1 : 0
+
+let sortedProducts = [...products].sort((p1, p2) =>
+p1.sale < p2.sale ? 1 : p1.sale > p2.sale ? -1 : 0
 );
 
 showProduct(products);
