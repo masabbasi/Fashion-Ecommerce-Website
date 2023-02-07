@@ -133,14 +133,15 @@ signInBtn.addEventListener("click", function (e) {
     });
     window.location.replace("./dashboard.html");
   } else {
-    const signInMsg = ($.querySelector(".signInMsg").innerHTML =
-      "Email or Password is wrong");
+    const signInMsg = $.querySelector(".signInMsg");
+		signInMsg.style.color = "rgb(194, 47, 47)";
+		signInMsg.innerHTML ="Email or Password is wrong";
   }
 });
 
 signUpBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  const signInMsg = $.querySelector(".signUpMsg");
+  const signUpMsg = $.querySelector(".signUpMsg");
   const emailRegEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
   if (
     firstName.value.trim() != "" &&
@@ -154,8 +155,8 @@ signUpBtn.addEventListener("click", function (e) {
         return item.profile.email === emails[1].value;
       });
       if (findUser === undefined) {
-        signInMsg.style.color = "rgb(47, 216, 75)";
-        signInMsg.innerHTML = "Registration was successful; Please Login.";
+        signUpMsg.style.color = "rgb(47, 216, 75)";
+        signUpMsg.innerHTML = "Registration was successful; Please Login.";
         const newUser = {
           id: Date.now(),
           login: false,
@@ -173,15 +174,15 @@ signUpBtn.addEventListener("click", function (e) {
         users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
       } else {
-        signInMsg.style.color = "rgb(194, 47, 47)";
-        signInMsg.innerHTML = "This Email has already been registered.";
+        signUpMsg.style.color = "rgb(194, 47, 47)";
+        signUpMsg.innerHTML = "This Email has already been registered.";
       }
     } else {
-      signInMsg.style.color = "rgb(194, 47, 47)";
-      signInMsg.innerHTML = "Enter a valid email.";
+      signUpMsg.style.color = "rgb(194, 47, 47)";
+      signUpMsg.innerHTML = "Enter a valid email.";
     }
   } else {
-    signInMsg.style.color = "rgb(194, 47, 47)";
-    signInMsg.innerHTML = "Please fill in all items.";
+    signUpMsg.style.color = "rgb(194, 47, 47)";
+    signUpMsg.innerHTML = "Please fill in all items.";
   }
 });
