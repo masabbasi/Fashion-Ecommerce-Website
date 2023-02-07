@@ -131,8 +131,6 @@ signInBtn.addEventListener("click", function (e) {
     const userId = users.find((item) => {
       item.id === findUser.id;
     });
-    console.log(userId.id);
-    console.log(findUser.id);
     window.location.replace("./dashboard.html");
   } else {
     const signInMsg = ($.querySelector(".signInMsg").innerHTML =
