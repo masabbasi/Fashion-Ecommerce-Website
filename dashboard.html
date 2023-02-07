@@ -11,11 +11,11 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
 		rel="stylesheet">
-	<title>LogIn</title>
+	<title>Favorite</title>
 	<link rel="icon" type="image/png" href="./assets/images/shop.ico">
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/app.css">
-	<link rel="stylesheet" href="./css/login.css">
+	<link rel="stylesheet" href="./css/dashboard.css">
 	<link rel="stylesheet" href="./css/responsive.css">
 </head>
 
@@ -61,46 +61,10 @@
 			</div>
 		</div>
 	</header>
-<div class="Sign">
-	<div class="signTabs">
-		<div class="signTab activeTab">Sign In</div>
-		<div class="signTab">Sign Up</div>
+	<div class="LogInMsg">
+		<span>You Log In. <span class="logOut">Exit</span> </span>
 	</div>
-	<div class="Signbody">
-		<form action="" class="signTabContent signIn">
-			<div class="signInMsg"></div>
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email" placeholder="Email">
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" placeholder="Password">
-			<div class="showpassword">
-				<input type="checkbox" name="showpassword" id="showpassword">
-				<label for="showpassword">Show Password</label>
-			</div>
-			<span><a href="#">Forget Password?</a></span>
-			<span>You Haven't an account? Click To <span class="signUpLink">Sign Up</span></span>
-			<button class="btn signInBtn" type="submit">Sign In</button>
-		</form>
-		<form action="" class="signTabContent signUp">
-			<div class="signUpMsg"></div>
-			<label for="firstname">First Name</label>
-			<input type="text" name="firstname" id="firstname" placeholder="First Name">
-			<label for="lastname">Last Name</label>
-			<input type="text" name="lastname" id="lastname" placeholder="Last Name">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email" placeholder="Email">
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" placeholder="Password">
-			<div class="showpassword">
-				<input type="checkbox" name="showpassword" id="showpassword">
-				<label for="showpassword">Show Password</label>
-			</div>
-			<span>You Have an account? Click To <span class="signInLink">Sign In</span></span>
-			<button class="btn signUpBtn" type="submit">Sign Up</button>
-		</form>
-	</div>
-</div>
-	<script src="./js/login.js" type="module"></script>
+	<script src="./js/dashboard.js" type="module"></script>
 </body>
 
 </html>

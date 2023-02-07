@@ -1,10 +1,12 @@
 import { users } from "./users.js";
+import { setBasketBallet, setFavoriteBallet } from "./app.js";
 
 const $ = document;
 const hamburgerMenu = $.querySelector(".hamburgerMenu");
 const menu = $.querySelector(".menu");
 const menuNav = $.querySelector(".menu nav");
 const themeBtn = $.querySelector(".themeBtn");
+export let userLogin = false;
 
 let basket = [];
 if (localStorage.getItem("basket") != null) {
@@ -67,30 +69,36 @@ tabs.forEach(function (tab, tabIndex) {
   });
 });
 
-signUpLink.addEventListener("click", function () {
-  contents[0].style.display = "none";
-  tabs[0].classList.remove("activeTab");
-  contents[1].style.display = "flex";
-  tabs[1].classList.add("activeTab");
-});
+if (signUpLink != null) {
+  signUpLink.addEventListener("click", function () {
+    contents[0].style.display = "none";
+    tabs[0].classList.remove("activeTab");
+    contents[1].style.display = "flex";
+    tabs[1].classList.add("activeTab");
+  });
+}
 
-signInLink.addEventListener("click", function () {
-  contents[1].style.display = "none";
-  tabs[1].classList.remove("activeTab");
-  contents[0].style.display = "flex";
-  tabs[0].classList.add("activeTab");
-});
+if (signInLink != null) {
+  signInLink.addEventListener("click", function () {
+    contents[1].style.display = "none";
+    tabs[1].classList.remove("activeTab");
+    contents[0].style.display = "flex";
+    tabs[0].classList.add("activeTab");
+  });
+}
 
 const passwords = $.querySelectorAll("#password");
 const showpasswords = $.querySelectorAll("#showpassword");
 
-showpasswords[0].addEventListener("click", function () {
-  if (passwords[0].type === "password") {
-    passwords[0].type = "text";
-  } else {
-    passwords[0].type = "password";
-  }
-});
+if (showpasswords != null) {
+  showpasswords[0].addEventListener("click", function () {
+    if (passwords[0].type === "password") {
+      passwords[0].type = "text";
+    } else {
+      passwords[0].type = "password";
+    }
+  });
+}
 
 showpasswords[1].addEventListener("click", function () {
   if (passwords[1].type === "password") {
@@ -115,36 +123,67 @@ signInBtn.addEventListener("click", function (e) {
     );
   });
   if (findUser != null) {
-    console.log("Log In Success");
-		// findUser[0].login = true;
+    console.log("Log In Success"); //redirect to homepage
+    findUser.login = true;
+    userLogin = true;
+    localStorage.setItem("userLogin", JSON.stringify(userLogin));
+    localStorage.setItem("users", JSON.stringify(users));
+    const userId = users.find((item) => {
+      item.id === findUser.id;
+    });
+    console.log(userId.id);
+    console.log(findUser.id);
+    // window.location.replace("./dashboard.html");
   } else {
-    console.log("Wrong");
+    const signInMsg = ($.querySelector(".signInMsg").innerHTML =
+      "Email or Password is wrong");
   }
 });
 
 signUpBtn.addEventListener("click", function (e) {
-  // e.preventDefault();
-  // const findUser = users.find((item)=>{
-  // 	return ((item.profile.email === emails[1].value))
-  // })
-  // console.log(findUser);
-  // if (findUser.length === 0) {
-  // 	console.log("new User");
-  const newUser = {
-    id: Date.now(),
-    login: false,
-    profile: {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: email[1].value,
-    },
-    password: passwords[1].value,
-    shop: {
-      favorite: favorite,
-      basket: basket,
-    },
-  };
-  users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
-  // }
+  e.preventDefault();
+  const signInMsg = $.querySelector(".signUpMsg");
+  const emailRegEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+  if (
+    firstName.value.trim() != "" &&
+    lastName.value.trim() != "" &&
+    email[1].value.trim() != "" &&
+    passwords[1].value.trim() != ""
+  ) {
+    if (emailRegEx.test(email[1].value)) {
+			console.log("HI");
+      const findUser = users.find((item) => {
+        return item.profile.email === emails[1].value;
+      });
+      if (findUser === undefined) {
+        signInMsg.style.color = "rgb(47, 216, 75)";
+        signInMsg.innerHTML = "Registration was successful; Please Login.";
+        const newUser = {
+          id: Date.now(),
+          login: false,
+          profile: {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email[1].value,
+          },
+          password: passwords[1].value,
+          shop: {
+            favorite: favorite,
+            basket: basket,
+          },
+        };
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+      } else {
+        signInMsg.style.color = "rgb(194, 47, 47)";
+        signInMsg.innerHTML = "This Email has already been registered.";
+      }
+    } else {
+      signInMsg.style.color = "rgb(194, 47, 47)";
+      signInMsg.innerHTML = "Enter a valid email.";
+    }
+  } else {
+    signInMsg.style.color = "rgb(194, 47, 47)";
+    signInMsg.innerHTML = "Please fill in all items.";
+  }
 });

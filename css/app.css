@@ -141,7 +141,7 @@ header {
 }
 
 .menu {
-  height: 5rem;
+  height: 7rem;
   padding: 1rem 2rem;
   box-shadow: 0px 1px 2px #d4d2d2;
   display: flex;
@@ -200,6 +200,22 @@ header {
   justify-content: center;
   align-items: center;
   margin-right: 0.5rem;
+  position: relative;
+}
+
+.welcomeText {
+	width: fit-content;
+	position: absolute;
+	bottom: -2rem;
+	text-align: center;
+	font-size: 1.1rem;
+	background-color: var(--primaryColor);
+	color: #FFFFFF;
+	border-radius: 0.8rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 0.7rem;
 }
 
 .menuIconImage img {
@@ -214,11 +230,13 @@ header {
   width: 80%;
 }
 
-.menuIconBasket,.menuIconFavorite {
+.menuIconBasket,
+.menuIconFavorite {
   position: relative;
 }
 
-.menuIconBasket::after,.menuIconFavorite:after {
+.menuIconBasket::after,
+.menuIconFavorite:after {
   position: absolute;
   top: -0.2rem;
   right: -0.2rem;
@@ -233,11 +251,11 @@ header {
   background-color: var(--primaryColorHover);
 }
 
-.menuIconBasket::after{
+.menuIconBasket::after {
   content: var(--Basket);
 }
 .menuIconFavorite:after {
-	content:var(--Favorite);
+  content: var(--Favorite);
 }
 
 .hamburgerMenu {
@@ -308,7 +326,7 @@ nav {
   align-items: center;
   width: 100%;
   right: 0;
-  top: 5rem;
+  top: 7rem;
   transition: var(--transitionAll);
 }
 
@@ -716,7 +734,7 @@ New Arrivals - Start
   left: 1rem;
   top: 1rem;
   background-color: #ff7d1e;
-	color:#FFFFFF;
+  color: #ffffff;
 }
 
 .productFavorite {
@@ -725,31 +743,33 @@ New Arrivals - Start
 }
 
 .productBag {
-	bottom: 11rem;
+  bottom: 11rem;
   background-color: #ffffff;
 }
 
-.productBasketNotification,.productFavoriteNotification {
-	position: relative;
-	transition: var(--transitionAll);
+.productBasketNotification,
+.productFavoriteNotification {
+  position: relative;
+  transition: var(--transitionAll);
 }
 
-.productBasketNotification::before,.productFavoriteNotification::before {
-	content: "Added To Basket";
-	position: absolute;
-	right: calc(100% + 1rem);
-	color: #FFFFFF;
-	background-color: var(--secondaryColor);
-	width: 14rem;
-	height: 3rem;
-	border-radius: 1rem;
-display: flex;
-justify-content: center;
-align-items: center;
+.productBasketNotification::before,
+.productFavoriteNotification::before {
+  content: "Added To Basket";
+  position: absolute;
+  right: calc(100% + 1rem);
+  color: #ffffff;
+  background-color: var(--secondaryColor);
+  width: 14rem;
+  height: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .productFavoriteNotification::before {
-	content: "Favorite";
+  content: "Favorite";
 }
 
 .productPhotos {

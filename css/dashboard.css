@@ -1,0 +1,11 @@
+.LogInMsg {
+	color: var(--darkGrey);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5rem;
+}
+
+.logOut {
+	color: var(--primaryColor);
+}

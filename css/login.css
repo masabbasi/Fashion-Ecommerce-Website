@@ -55,11 +55,12 @@ form {
   align-items: center;
   justify-content: center;
   color: var(--darkGrey);
+	text-align: center;
 }
 
 input {
-  width: 20rem;
-  height: 3rem;
+  width: 90%;
+  height: 4rem;
   padding: 1rem;
   border-radius: 1rem;
   outline: none;
@@ -77,6 +78,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+	margin-bottom: 2rem;
 }
 
 #showpassword {
@@ -90,4 +92,15 @@ input:focus {
 button {
   outline: none;
   border: none;
+	margin-top: 1rem;
+}
+
+@media (min-width: 576px) {
+	.Sign {
+		width: 50rem;
+		margin: 0 auto;
+		margin-top: 2rem;
+	}
+	input {
+		width: 30rem;}
 }
