@@ -1,48 +1,23 @@
 import { products } from "./products.js";
-import { setBasketBallet, addToCart } from "./app.js";
+import { addToCart } from "./app.js";
 
 const $ = document;
-const hamburgerMenu = $.querySelector(".hamburgerMenu");
-const menu = $.querySelector(".menu");
-const menuNav = $.querySelector(".menu nav");
-const themeBtn = $.querySelector(".themeBtn");
 
 let basket = [];
 if (localStorage.getItem("basket") != null) {
   basket = JSON.parse(localStorage.getItem("basket"));
 }
-//Mobile Menu
-hamburgerMenu.addEventListener("click", () => {
-  hamburgerMenu.classList.toggle("hamburgerMenuOpen");
-  menuNav.classList.toggle("navInMobile");
-  menu.classList.toggle("menuMobileActive");
-});
-window.addEventListener("resize", function () {
-  if (this.innerWidth > 768) {
-    hamburgerMenu.classList.remove("hamburgerMenuOpen");
-    menuNav.classList.remove("navInMobile");
-    menu.classList.remove("menuMobileActive");
-  }
-});
 
-//Dark Mode
-if (localStorage.getItem("theme") === "dark-theme") {
-  document.documentElement.classList.add("dark-theme");
-  themeBtn.innerHTML = '<img src="./assets/images/sun.svg">';
+let users = [];
+if (localStorage.getItem("users") != null) {
+  users = JSON.parse(localStorage.getItem("users"));
 }
-themeBtn.addEventListener("click", function () {
-  console.log("1");
-  document.documentElement.classList.toggle("dark-theme");
-  if (document.documentElement.classList.contains("dark-theme")) {
-    console.log("2");
-    localStorage.setItem("theme", "dark-theme");
-    this.innerHTML = '<img src="./assets/images/sun.svg">';
-  } else {
-    console.log("3");
-    localStorage.setItem("theme", "light-theme");
-    this.innerHTML = '<img src="./assets/images/moon.svg">';
-  }
-});
+
+let userOnline = [];
+if (localStorage.getItem("userOnline") != null) {
+  userOnline = JSON.parse(localStorage.getItem("userOnline"));
+}
+
 
 const renderCartItems = () => {
 	if (localStorage.getItem("basket") != null) {

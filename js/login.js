@@ -1,12 +1,23 @@
-import { users } from "./users.js";
-import { setBasketBallet, setFavoriteBallet } from "./app.js";
-
 const $ = document;
-const hamburgerMenu = $.querySelector(".hamburgerMenu");
-const menu = $.querySelector(".menu");
-const menuNav = $.querySelector(".menu nav");
-const themeBtn = $.querySelector(".themeBtn");
-export let userLogin = false;
+
+let users = [];
+if (localStorage.getItem("users") != null) {
+  users = JSON.parse(localStorage.getItem("users"));
+}
+
+let userLogin = false;
+if (localStorage.getItem("userLogin") != null) {
+  userLogin = JSON.parse(localStorage.getItem("userLogin"));
+}
+
+if (userLogin) {
+	window.location.replace("./dashboard.html");
+}
+
+let userOnline = [];
+if (localStorage.getItem("userOnline") != null) {
+  userOnline = JSON.parse(localStorage.getItem("userOnline"));
+}
 
 let basket = [];
 if (localStorage.getItem("basket") != null) {
@@ -17,38 +28,6 @@ let favorite = [];
 if (localStorage.getItem("favorite") != null) {
   favorite = JSON.parse(localStorage.getItem("favorite"));
 }
-//Mobile Menu
-hamburgerMenu.addEventListener("click", () => {
-  hamburgerMenu.classList.toggle("hamburgerMenuOpen");
-  menuNav.classList.toggle("navInMobile");
-  menu.classList.toggle("menuMobileActive");
-});
-window.addEventListener("resize", function () {
-  if (this.innerWidth > 768) {
-    hamburgerMenu.classList.remove("hamburgerMenuOpen");
-    menuNav.classList.remove("navInMobile");
-    menu.classList.remove("menuMobileActive");
-  }
-});
-
-//Dark Mode
-if (localStorage.getItem("theme") === "dark-theme") {
-  document.documentElement.classList.add("dark-theme");
-  themeBtn.innerHTML = '<img src="./assets/images/sun.svg">';
-}
-themeBtn.addEventListener("click", function () {
-  console.log("1");
-  document.documentElement.classList.toggle("dark-theme");
-  if (document.documentElement.classList.contains("dark-theme")) {
-    console.log("2");
-    localStorage.setItem("theme", "dark-theme");
-    this.innerHTML = '<img src="./assets/images/sun.svg">';
-  } else {
-    console.log("3");
-    localStorage.setItem("theme", "light-theme");
-    this.innerHTML = '<img src="./assets/images/moon.svg">';
-  }
-});
 
 const tabs = $.querySelectorAll(".signTab");
 const contents = $.querySelectorAll(".signTabContent");
@@ -123,14 +102,12 @@ signInBtn.addEventListener("click", function (e) {
     );
   });
   if (findUser != null) {
-    console.log("Log In Success"); //redirect to homepage
-    findUser.login = true;
+		userOnline = findUser;
     userLogin = true;
+		localStorage.setItem("userOnline", JSON.stringify(userOnline));
+		localStorage.setItem("basket", JSON.stringify(findUser.shop.basket));
+		localStorage.setItem("favorite", JSON.stringify(findUser.shop.favorite));
     localStorage.setItem("userLogin", JSON.stringify(userLogin));
-    localStorage.setItem("users", JSON.stringify(users));
-    const userId = users.find((item) => {
-      item.id === findUser.id;
-    });
     window.location.replace("./dashboard.html");
   } else {
     const signInMsg = $.querySelector(".signInMsg");
