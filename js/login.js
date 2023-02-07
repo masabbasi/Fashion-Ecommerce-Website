@@ -133,7 +133,7 @@ signInBtn.addEventListener("click", function (e) {
     });
     console.log(userId.id);
     console.log(findUser.id);
-    // window.location.replace("./dashboard.html");
+    window.location.replace("./dashboard.html");
   } else {
     const signInMsg = ($.querySelector(".signInMsg").innerHTML =
       "Email or Password is wrong");
