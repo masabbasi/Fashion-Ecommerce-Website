@@ -39,6 +39,9 @@ const productFavorite = $.querySelectorAll(".productFavorite").forEach((item) =>
 );
 
 export const addToCart = (productId) => {
+	if (localStorage.getItem("basket") != null) {
+		basket = JSON.parse(localStorage.getItem("basket"));
+	}
   const findProduct = products.find((item) => item.id === productId);
   const product = findProduct;
 

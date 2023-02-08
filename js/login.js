@@ -108,7 +108,7 @@ signInBtn.addEventListener("click", function (e) {
 		localStorage.setItem("basket", JSON.stringify(findUser.shop.basket));
 		localStorage.setItem("favorite", JSON.stringify(findUser.shop.favorite));
     localStorage.setItem("userLogin", JSON.stringify(userLogin));
-    window.location.replace("./dashboard.html");
+    window.location.replace("./index.html");
   } else {
     const signInMsg = $.querySelector(".signInMsg");
 		signInMsg.style.color = "rgb(194, 47, 47)";
