@@ -5,12 +5,10 @@ if (localStorage.getItem("users") != null) {
 	users = [
 		{
 			id: 1,
-			login: false,
 			profile: {
 				firstName: "admin",
 				lastName: "admini",
 				email: "admin@gmail.com",
-				mobilePhone: "09359626811",
 			},
 			password: "1234",
 			shop: {
