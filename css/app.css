@@ -376,7 +376,7 @@ nav ul a:hover {
   outline: none;
 }
 
-.search img {
+.search>img:nth-of-type(1) {
   width: 2rem;
   position: absolute;
   top: 50%;
@@ -386,6 +386,78 @@ nav ul a:hover {
 
 #search::placeholder {
   color: #0000003f;
+}
+
+.link-result:hover {
+  transform: scale(1.1);
+}
+
+.search-result {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 90%;
+  max-height: 20rem;
+  padding: 0.5rem;
+  border-radius: 0 0 1rem 1rem;
+  background-color: rgb(34, 37, 37);
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  overflow-y: scroll;
+}
+
+.search-result-item {
+  width: 100%;
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 0.1rem solid rgba(128, 128, 128, 0.685);
+}
+
+.search-result-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	flex-shrink: 0;
+}
+
+.search-result-img img {
+  width: 80%;
+}
+
+.search-result-name {
+  color: white;
+  font-size: 1.4rem;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #464248 #222525;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #464248;
+  border-radius: 1rem;
+  border: 0px solid #ffffff;
 }
 
 .headerContent {

@@ -59,5 +59,5 @@ const allFooter = `			<section class="footerLogo">
 </ul>
 </section>`;
 
-const footer = $.querySelector(".footer");
+const footer = document.querySelector(".footer");
 footer.innerHTML=allFooter;
