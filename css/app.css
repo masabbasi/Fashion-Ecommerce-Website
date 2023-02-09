@@ -71,7 +71,6 @@ Reset - Start
 ------------------------------*/
 a {
   text-decoration: none;
-  cursor: none;
   color: var(--darkGrey);
   transition: var(--transitionColor);
 }
@@ -104,7 +103,6 @@ Components - Start
   color: #ffffff;
   background-color: var(--secondaryColor);
   transition: var(--transitionBColor);
-  cursor: none;
 }
 
 .btn:hover {
@@ -183,10 +181,6 @@ header {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-}
-
-.menuIcon div {
-  cursor: none;
 }
 
 .dark-theme .menuIconImage img {
@@ -402,11 +396,11 @@ nav ul a:hover {
   max-height: 20rem;
   padding: 0.5rem;
   border-radius: 0 0 1rem 1rem;
-  background-color: rgb(34, 37, 37);
-  z-index: 2;
-  color: white;
+  background-color: var(--darkGrey);
+  color: var(--lightGrey);
   font-weight: bold;
   overflow-y: scroll;
+  z-index: 2;
 }
 
 .search-result-item {
@@ -416,6 +410,10 @@ nav ul a:hover {
   align-items: center;
   padding: 0.5rem;
   border-bottom: 0.1rem solid rgba(128, 128, 128, 0.685);
+}
+
+.search-result-item:hover {
+	background-color: var(--primaryColorHover);
 }
 
 .search-result-img {
@@ -790,7 +788,6 @@ New Arrivals - Start
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: none;
 }
 
 .productImage div:hover {
@@ -877,7 +874,6 @@ New Arrivals - Start
 
 .rate img {
   margin-left: 0.4rem;
-  cursor: none;
 }
 
 .rate img:first-child {
@@ -894,6 +890,7 @@ New Arrivals - Start
 .productDetail div:last-child {
   display: flex;
   align-items: center;
+	justify-content: space-between;
 }
 
 .productPrice {
@@ -908,6 +905,12 @@ New Arrivals - Start
   font-size: 2rem;
   font-weight: 400;
   text-decoration-line: line-through;
+}
+
+.productInventory {
+	color: #74ca4d;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .swiperButton {
@@ -1124,7 +1127,6 @@ Newsletter - Start
   outline: none;
   border: none;
   overflow: hidden;
-  cursor: none;
   flex-shrink: 0;
 }
 
@@ -1160,7 +1162,6 @@ Social Media - Start
   align-items: center;
   margin-left: 1rem;
   overflow: hidden;
-  cursor: none;
 }
 
 .socialMedia div:hover {

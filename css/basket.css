@@ -72,3 +72,21 @@
 .btns .btn:first-child {
 	margin-right: 2rem;
 }
+.addProduct {
+position: relative;
+}
+
+.addProductMsg::after {
+  content: "Out Of Stock";
+  position: absolute;
+	left: 3rem;
+	top: -1rem;
+  color: #ffffff;
+  background-color: var(--secondaryColor);
+  width: 9rem;
+  height: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

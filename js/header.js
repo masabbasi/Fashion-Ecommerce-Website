@@ -148,7 +148,7 @@ if (userLogin) {
 	welcomeText.innerHTML = "Sign In/Up";
 }
 
-function setBasketBallet() {
+export function setBasketBallet() {
   if (localStorage.getItem("basket") != null) {
     basket = JSON.parse(localStorage.getItem("basket"));
   }
@@ -164,7 +164,7 @@ function setBasketBallet() {
   }
 }
 
-function setFavoriteBallet() {
+export function setFavoriteBallet() {
   if (localStorage.getItem("favorite") != null) {
     favorite = JSON.parse(localStorage.getItem("favorite"));
   }
@@ -183,7 +183,7 @@ function setFavoriteBallet() {
 setBasketBallet();
 setFavoriteBallet();
 
-
+//Search
 const search = document.querySelector("#searchInput");
 const searchResult = document.querySelector(".search-result");
 

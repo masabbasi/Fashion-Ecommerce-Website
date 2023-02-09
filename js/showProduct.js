@@ -1,7 +1,7 @@
 export function showProduct(array) {
   const swiperNewArrivals = document.querySelector(".swiperNewArrivals");
   array.forEach((item) => {
-    const { category, images, id, tag, title, price } = item;
+    const { category, images, id, tag, title, price,max } = item;
     let tagEl;
     if (tag != "") {
       tagEl = `<div class="productTag">${tag}</div>`;
@@ -32,7 +32,11 @@ export function showProduct(array) {
 					</div>
 				</div>
 				<p><a href="#">${title}</a></p>
-				<div><span class="productPrice">$${price.main}</span><span class="productOff">$${price.off}</span></div>
+				<div>
+				<span class="productPrice">$${price.main}</span>
+				<span class="productOff">$${price.off}</span>
+				</span><span class="productInventory">Inventory: ${max}</span>
+				</div>
 			</div>
 		</div>
 	</div>

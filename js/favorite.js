@@ -1,4 +1,5 @@
 import { products } from "./products.js";
+import { setBasketBallet , setFavoriteBallet} from "./header.js";
 
 const $ = document;
 

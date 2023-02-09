@@ -1,5 +1,6 @@
 import { products } from "./products.js";
 import { addToCart } from "./app.js";
+import { setBasketBallet , setFavoriteBallet} from "./header.js";
 
 const $ = document;
 
@@ -42,6 +43,7 @@ const renderCartItems = () => {
 				<img src=./assets/images/${item.images[0]}>
 			</td>
 			<td>${item.title}</td>
+			<td>${item.max}</td>
 			<td>
 			<span class="deleteProduct" data-id="${item.id}">
 			<svg fill="#000000" width="24px" height="24px" viewBox="-1.7 0 20.4 20.4" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg"><path d="M16.416 10.283A7.917 7.917 0 1 1 8.5 2.366a7.916 7.916 0 0 1 7.916 7.917zm-2.958.01a.792.792 0 0 0-.792-.792H4.32a.792.792 0 0 0 0 1.583h8.346a.792.792 0 0 0 .792-.791z"/></svg>
@@ -64,10 +66,26 @@ const renderCartItems = () => {
       item.addEventListener("click", () => removeFormCart(+item.dataset.id));
     }
   );
-  const addProducts = $.querySelectorAll(".addProduct").forEach((item) => {
+  const addProducts = $.querySelectorAll(".addProduct").forEach((item,itemIndex) => {
     item.addEventListener("click", () => {
-      addToCart(+item.dataset.id);
-      renderCartItems();
+			const itemId = +item.dataset.id;
+			const index = itemIndex;
+			const itemy = basket.find((item)=>item.id === itemId);
+			if (itemy.qty+1 > itemy.max) {
+				const alerts = document.querySelectorAll(".addProduct");
+				alerts.forEach((item,alertIndex)=>{
+					if (alertIndex===index) {
+						item.classList.add("addProductMsg");
+						setTimeout(()=>{
+							item.classList.remove("addProductMsg");
+						},500)
+					}
+				})
+			} else {
+				addToCart(+item.dataset.id);
+				renderCartItems();
+			}
+
     });
   });
   setBasketBallet();

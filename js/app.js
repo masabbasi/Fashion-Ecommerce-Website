@@ -1,6 +1,8 @@
 import { products } from "./products.js";
 import { showProduct } from "./showProduct.js";
 import { showTrendingProduct } from "./showTrendingProduct.js";
+import { setBasketBallet , setFavoriteBallet} from "./header.js";
+// import {setBasketBallet} from "./header.js"
 
 const $ = document;
 
@@ -38,6 +40,7 @@ const productFavorite = $.querySelectorAll(".productFavorite").forEach((item) =>
   }
 );
 
+
 export const addToCart = (productId) => {
 	if (localStorage.getItem("basket") != null) {
 		basket = JSON.parse(localStorage.getItem("basket"));
@@ -51,13 +54,23 @@ export const addToCart = (productId) => {
     if (item.id === product.id) {
       existingProduct = true;
 
-      const newItem = {
-        ...item,
-        qty: item.qty + 1,
-        total: (item.qty + 1) * item.price.off,
-      };
+			if (item.qty+1<=item.max) {
+				const newItem = {
+					...item,
+					qty: item.qty + 1,
+					total: (item.qty + 1) * item.price.off,
+				} 
+	
+				return [...state, newItem];
+			}
 
-      return [...state, newItem];
+				// const newItem = {
+				// 	...item,
+				// 	qty: item.qty + 1,
+				// 	total: (item.qty + 1) * item.price.off,
+				// };
+	
+				// return [...state, newItem];
     }
 
     return [...state, item];

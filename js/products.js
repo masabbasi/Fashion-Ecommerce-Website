@@ -10,7 +10,8 @@ export const products = [
     },
     tag: "40%",
     rate: 4,
-    sale: 2324,
+    max:8,
+		sale: 2324,
 		qty:0,
 		total:0
   },
@@ -25,7 +26,8 @@ export const products = [
     },
     tag: "",
     rate: 3,
-    sale: 3237,
+    max:6,
+		sale: 3237,
   },
   {
     id: 3,
@@ -38,7 +40,8 @@ export const products = [
     },
     tag: "New",
     rate: 5,
-    sale: 102,
+    max:5,
+		sale: 102,
   },
   {
     id: 4,
@@ -51,7 +54,8 @@ export const products = [
     },
     tag: "",
     rate: 1,
-    sale: 1235,
+    max:4,
+		sale: 1235,
   },
   {
     id: 5,
@@ -64,7 +68,8 @@ export const products = [
     },
     tag: "",
     rate: 4.5,
-    sale: 502,
+    max:2,
+		sale: 502,
   },
   {
     id: 6,
@@ -77,7 +82,8 @@ export const products = [
     },
     tag: "",
     rate: 2,
-    sale: 3400,
+    max:8,
+		sale: 3400,
   },
   {
     id: 7,
@@ -90,7 +96,8 @@ export const products = [
     },
     tag: "",
     rate: 2,
-    sale: 2454,
+    max:3,
+		sale: 2454,
   },
   {
     id: 8,
@@ -103,6 +110,7 @@ export const products = [
     },
     tag: "",
     rate: 2,
-    sale: 1340,
+    max:7,
+		sale: 1340,
   },
 ]
