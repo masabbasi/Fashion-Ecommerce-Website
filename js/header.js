@@ -209,13 +209,13 @@ function updateResult() {
       for (let i = 0; i < data.length; i++) {
         let a = document.createElement("a");
         a.classList.add("link-result");
-        a.setAttribute("href", "./../products.html");
+        a.setAttribute("href", "../products.html");
         let div1 = document.createElement("div");
         div1.classList.add("search-result-item");
         let div2 = document.createElement("div");
         div2.classList.add("search-result-img");
         let img = document.createElement("img");
-        let src = `../assets/images/${data[i].images[0]}`;
+        let src = `./assets/images/${data[i].images[0]}`;
         img.setAttribute("src", `${src}`);
         let div3 = document.createElement("div");
         div3.classList.add("search-result-name");
