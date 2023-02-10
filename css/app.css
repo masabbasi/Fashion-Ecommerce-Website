@@ -310,7 +310,7 @@ nav {
   background-color: var(--lightGrey);
   height: 100%;
   z-index: 2;
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .navInMobile {
@@ -400,7 +400,7 @@ nav ul a:hover {
   color: var(--lightGrey);
   font-weight: bold;
   overflow-y: scroll;
-  z-index: 2;
+  /* z-index: 999; */
 }
 
 .search-result-item {
@@ -467,18 +467,18 @@ nav ul a:hover {
   padding-bottom: 3rem;
 }
 
-.headerContentLeft {
+.headerContentRight {
   width: 100%;
   position: relative;
   margin-bottom: 2rem;
 }
 
-.headerContentLeft img:first-child {
+.headerContentRight img:first-child {
   width: 100%;
   filter: grayscale(1);
 }
 
-.headerContentLeft img:last-child {
+.headerContentRight img:last-child {
   width: 70%;
   position: absolute;
   top: 50%;
@@ -486,7 +486,7 @@ nav ul a:hover {
   transform: translate(-50%, -50%);
 }
 
-.headerContentRight {
+.headerContentLeft {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -496,7 +496,7 @@ nav ul a:hover {
   text-align: center;
 }
 
-.headerContentRight h1 {
+.headerContentLeft h1 {
   font-size: 3rem;
   font-weight: bold;
   margin: 2rem 0;
