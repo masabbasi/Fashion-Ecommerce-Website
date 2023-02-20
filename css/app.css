@@ -400,7 +400,6 @@ nav ul a:hover {
   color: var(--lightGrey);
   font-weight: bold;
   overflow-y: scroll;
-  /* z-index: 999; */
 }
 
 .search-result-item {

@@ -21,6 +21,44 @@ p1.sale < p2.sale ? 1 : p1.sale > p2.sale ? -1 : 0
 );
 
 showProduct(products);
+
+const categories = document.querySelectorAll(".categories div");
+    categories.forEach(function (item) {
+			console.log(item);
+      item.addEventListener("click", function () {
+        if (item.classList.contains("categoryMen")) {
+          let productsMen = products.filter((item) =>  item.category === "Men");
+          showProduct(productsMen);
+        } else if (item.classList.contains("categoryWomen")) {
+          let productsWomen = products.filter((item) => item.category === "Women");
+          showProduct(productsWomen);
+        } else if (item.classList.contains("categoryKids")) {
+          let productsKids = products.filter((item) => item.category === "Kids");
+          showProduct(productsKids);
+        } else if (item.classList.contains("categoryHighest")) {
+          let productsHighest = [...products].sort((p1, p2) =>
+            p1.price.off < p2.price.off
+              ? 1
+              : p1.price.off > p2.price.off
+              ? -1
+              : 0
+          );
+          showProduct(productsHighest);
+        } else if (item.classList.contains("categoryLowest")) {
+					let productsLowest = [...products].sort((p1, p2) =>
+            p1.price.off > p2.price.off
+              ? 1
+              : p1.price.off < p2.price.off
+              ? -1
+              : 0
+          );
+          showProduct(productsLowest);
+        } else {
+					showProduct(products);
+        }
+      });
+    });
+
 showTrendingProduct(sortedProducts);
 
 const productBags = $.querySelectorAll(".productBag").forEach((item) => {

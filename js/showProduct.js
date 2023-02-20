@@ -1,7 +1,8 @@
 export function showProduct(array) {
   const swiperNewArrivals = document.querySelector(".swiperNewArrivals");
+  swiperNewArrivals.innerHTML = "";
   array.forEach((item) => {
-    const { category, images, id, tag, title, price,max } = item;
+    const { category, images, id, tag, title, price, max } = item;
     let tagEl;
     if (tag != "") {
       tagEl = `<div class="productTag">${tag}</div>`;
@@ -9,7 +10,7 @@ export function showProduct(array) {
       tagEl = "";
     }
     const createProduct = `<div class="swiper-slide">
-		<div class="product" data-category="${category}">
+		<div class="product">
 			<div class="productImage">
 				<img src="./assets/images/${images[0]}">
 				<div class="productFavorite" data-id="${id}"><img src="./assets/images/favorite.svg"></div>
@@ -33,8 +34,8 @@ export function showProduct(array) {
 				</div>
 				<p><a href="#">${title}</a></p>
 				<div>
-				<span class="productPrice">$${price.main}</span>
-				<span class="productOff">$${price.off}</span>
+				<span class="productPrice">$${price.off}</span>
+				<span class="productOff">$${price.main}</span>
 				</span><span class="productInventory">Inventory: ${max}</span>
 				</div>
 			</div>
