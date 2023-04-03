@@ -171,3 +171,44 @@ export const addToFavorite = (productId) => {
   localStorage.setItem("favorite", JSON.stringify(favorite));
   setFavoriteBallet();
 };
+
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    300: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
+    1400: {
+      slidesPerView: 4,
+    }
+  }
+});
+
+const swiper2 = new Swiper(".swiperReview", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    300: {
+      slidesPerView: 1,
+    }
+  }
+});
