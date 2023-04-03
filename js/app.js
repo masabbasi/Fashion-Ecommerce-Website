@@ -24,18 +24,30 @@ showProduct(products);
 
 const categories = document.querySelectorAll(".categories div");
     categories.forEach(function (item) {
-			console.log(item);
+			function removeActive() {
+				categories.forEach((item)=>{
+					item.classList.remove("categoryActive");
+				})
+			}
       item.addEventListener("click", function () {
         if (item.classList.contains("categoryMen")) {
+					removeActive();
+					item.classList.add("categoryActive");
           let productsMen = products.filter((item) =>  item.category === "Men");
           showProduct(productsMen);
         } else if (item.classList.contains("categoryWomen")) {
+					removeActive();
+					item.classList.add("categoryActive");
           let productsWomen = products.filter((item) => item.category === "Women");
           showProduct(productsWomen);
         } else if (item.classList.contains("categoryKids")) {
+					removeActive();
+					item.classList.add("categoryActive");
           let productsKids = products.filter((item) => item.category === "Kids");
           showProduct(productsKids);
         } else if (item.classList.contains("categoryHighest")) {
+					removeActive();
+					item.classList.add("categoryActive");
           let productsHighest = [...products].sort((p1, p2) =>
             p1.price.off < p2.price.off
               ? 1
@@ -45,6 +57,8 @@ const categories = document.querySelectorAll(".categories div");
           );
           showProduct(productsHighest);
         } else if (item.classList.contains("categoryLowest")) {
+					removeActive();
+					item.classList.add("categoryActive");
 					let productsLowest = [...products].sort((p1, p2) =>
             p1.price.off > p2.price.off
               ? 1
@@ -54,8 +68,28 @@ const categories = document.querySelectorAll(".categories div");
           );
           showProduct(productsLowest);
         } else {
+					removeActive();
+					categories[0].classList.add("categoryActive");
 					showProduct(products);
         }
+
+				const productBags = $.querySelectorAll(".productBag").forEach((item) => {
+					item.addEventListener("click", () => {
+						item.classList.add("productBasketNotification");
+						setTimeout(() => item.classList.remove("productBasketNotification"), 500);
+						addToCart(+item.dataset.id);
+					});
+				});
+				
+				const productFavorite = $.querySelectorAll(".productFavorite").forEach((item) => {
+						item.addEventListener("click", (e) =>{
+							item.classList.add("productFavoriteNotification");
+						setTimeout(() => item.classList.remove("productFavoriteNotification"), 500);
+							addToFavorite(+e.currentTarget.dataset.id)
+						});
+					}
+				);
+
       });
     });
 
@@ -101,14 +135,6 @@ export const addToCart = (productId) => {
 	
 				return [...state, newItem];
 			}
-
-				// const newItem = {
-				// 	...item,
-				// 	qty: item.qty + 1,
-				// 	total: (item.qty + 1) * item.price.off,
-				// };
-	
-				// return [...state, newItem];
     }
 
     return [...state, item];

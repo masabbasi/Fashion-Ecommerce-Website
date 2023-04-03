@@ -1,6 +1,8 @@
 export function showProduct(array) {
   const swiperNewArrivals = document.querySelector(".swiperNewArrivals");
-  swiperNewArrivals.innerHTML = "";
+	if (swiperNewArrivals != null) {
+		swiperNewArrivals.innerHTML = "";
+	}
   array.forEach((item) => {
     const { category, images, id, tag, title, price, max } = item;
     let tagEl;
@@ -17,9 +19,6 @@ export function showProduct(array) {
 				<div class="productBag" data-id="${id}"><img src="./assets/images/Bag.svg"></div>
 				<div class="productPhotos"><img src="./assets/images/photos.svg"></div>
 				${tagEl}
-				
-				
-
 			</div>
 			<div class="productDetail">
 				<div>
@@ -44,6 +43,6 @@ export function showProduct(array) {
 		`;
     if (swiperNewArrivals != null) {
       swiperNewArrivals.innerHTML += createProduct;
-    }
+		}
   });
 }
